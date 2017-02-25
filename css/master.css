@@ -7,6 +7,9 @@ body {
     margin: 0;
     padding: 0; }
 
+.float-right {
+  float: right; }
+
 .navbar .navbar-nav {
   float: right !important; }
 
@@ -18,6 +21,8 @@ main {
 aside {
   margin-top: 20px;
   height: auto; }
+  aside .sticky-top {
+    padding-top: 20px; }
   aside .inside {
     background-color: rgba(0, 0, 0, 0.03);
     border: 1px solid rgba(0, 0, 0, 0.07);
@@ -25,3 +30,26 @@ aside {
     padding: 20px; }
     aside .inside ul {
       list-style: none; }
+
+footer {
+  width: 100%;
+  float: left;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 40px 0 0; }
+  footer h5 {
+    color: white; }
+  footer .mini-logo {
+    margin: 40px 0 0;
+    text-align: right; }
+  footer .bottom {
+    width: 100%;
+    float: left;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px; }
+    footer .bottom p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.8em; }
