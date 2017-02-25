@@ -14,3 +14,14 @@ main {
   width: 100%;
   float: left;
   margin-top: 20px; }
+
+aside {
+  margin-top: 20px;
+  height: auto; }
+  aside .inside {
+    background-color: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: 3px;
+    padding: 20px; }
+    aside .inside ul {
+      list-style: none; }
