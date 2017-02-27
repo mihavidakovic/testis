@@ -54,7 +54,32 @@ footer
 			color: rgba(#fff, 0.6)
 			font-size: 0.8em 
 			
-.slika
-	width: 200px
-	height: auto
+.slider
+	width: 100%
+	height: 300px
+	float: left
+	position: relative
+	.kontrola
+		position: absolute
+		top: 0
+		height: 100%
+		background-color: rgba(#000, 0.1) 
+		width: 100px
+		transition: 100ms all ease-in-out
+		&:hover
+			background-color: rgba(#000, 0.3) 
+		i
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			color: #FFF 
+			font-size: 2em
+		&.nazaj
+			left: 0
+		&.naprej
+			right: 0
+	.slika
+		width: 100%
+		height: auto
 	
