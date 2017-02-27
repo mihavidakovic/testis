@@ -13,7 +13,7 @@ var slike = ["http://cdn.bmwblog.com/wp-content/uploads/2016/10/BMW-G30-5-Series
 var index = 0;
 
 function indeksPlus() {
-	if (index >= slike.length) {
+	if (index >= slike.length - 1) {
 		index = 0;
 		slika1.src=slike[index];
 	} else {
@@ -24,7 +24,7 @@ function indeksPlus() {
 
 function indeksMinus() {
 	if (index <= 0) {
-		index = slike.length;
+		index = slike.length - 1;
 		slika1.src=slike[index];
 	} else {
 		index--;
