@@ -1,5 +1,5 @@
-var nazaj = document.getElementsByClassName('this')[0];
-var naprej = document.getElementsByClassName('this1')[0];
+var nazaj = document.getElementsByClassName('nazaj')[0];
+var naprej = document.getElementsByClassName('naprej')[0];
 var slika = document.getElementsByClassName('this1')[0];
 var slika1 = document.getElementById('slika1');
 
