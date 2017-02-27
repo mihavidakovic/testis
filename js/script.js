@@ -1,7 +1,7 @@
 var nazaj = document.getElementsByClassName('nazaj')[0];
 var naprej = document.getElementsByClassName('naprej')[0];
 var slika = document.getElementsByClassName('this1')[0];
-var slika1 = document.getElementById('slika1');
+var slika1 = document.getElementsByClassName('slika')[0];
 
 
 var slike = ["http://cdn.bmwblog.com/wp-content/uploads/2016/10/BMW-G30-5-Series-M-Sport-exterior-42-750x500.jpg",
@@ -13,22 +13,22 @@ var slike = ["http://cdn.bmwblog.com/wp-content/uploads/2016/10/BMW-G30-5-Series
 var index = 0;
 
 function indeksPlus() {
-	if (index >= slike.length) {
+	if (index >= slike.length - 1) {
 		index = 0;
-		slika1.src=slike[index];
+		slika1.style.backgroundImage = "url("+ slike[index] +")";
 	} else {
 		index++;
-		slika1.src=slike[index];
+		slika1.style.backgroundImage = "url("+ slike[index] +")";
 	}
 }
 
 function indeksMinus() {
 	if (index <= 0) {
-		index = slike.length;
-		slika1.src=slike[index];
+		index = slike.length - 1;
+		slika1.style.backgroundImage = "url("+ slike[index] +")";
 	} else {
 		index--;
-		slika1.src=slike[index];
+		slika1.style.backgroundImage = "url("+ slike[index] +")";
 	}
 	
 }
