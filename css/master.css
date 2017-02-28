@@ -66,7 +66,8 @@ footer {
     width: 50%;
     height: 100%;
     top: 0;
-    z-index: 20; }
+    z-index: 20;
+    cursor: pointer; }
     .slider .kontrola i {
       position: absolute;
       width: 70px;
