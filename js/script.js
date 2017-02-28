@@ -1,37 +1,122 @@
 var nazaj = document.getElementsByClassName('nazaj')[0];
 var naprej = document.getElementsByClassName('naprej')[0];
-var slika = document.getElementsByClassName('this1')[0];
-var slika1 = document.getElementsByClassName('slika')[0];
 
 
-var slike = ["http://cdn.bmwblog.com/wp-content/uploads/2016/10/BMW-G30-5-Series-M-Sport-exterior-42-750x500.jpg",
-			 "http://s2.paultan.org/image/2016/10/G30-BMW-5-Series-6-630x289.jpg", 
-			 "http://gtspirit.com/wp-content/uploads/2016/10/2017-BMW-G30-530d-6-e1476354520936.jpg", 
-			 "http://www.bmw.si/content/dam/bmw/common/cs/teaserpool/home/small-teaser/request_test_drive_486x273.jpg/jcr:content/renditions/cq5dam.resized.img.485.low.time1448891403342.jpg", 
-			 "http://www.bmwhk.com/content/dam/bmw/common/all-models/1-series/5-door/2015/images-and-videos/bmw-1-series-wallpaper-1920x1200-03-R.jpg/jcr:content/renditions/cq5dam.resized.img.485.low.time1448014414633.jpg"];
+var picturesArray = []; //creating array of pictures
 
+
+//populating array by getting ids
+for (var i = 0; i < 5; i++) {
+	picturesArray[i] = document.getElementById(i);
+	}
+
+//setting the first picture
 var index = 0;
+var firstPicture = document.getElementById(index);
+var class2 = firstPicture.className;
+if(class2 == class2) {
+	firstPicture.className += " active";
+} else {
+	firstPicture.className -= " active";
+}
 
-function indeksPlus() {
-	if (index >= slike.length - 1) {
-		index = 0;
-		slika1.style.backgroundImage = "url("+ slike[index] +")";
+//function that executes on click of next button
+function indexPlus() {
+
+	var inactivePictures = [];
+	var notIndex = [0,1,2,3,4];
+	var notIndex1 = notIndex.splice(index, 1);
+
+	for (var i = 0; i < picturesArray.length; i++) {
+	inactivePictures[i] = document.getElementById(notIndex1);
+} 
+
+
+	if (index >= picturesArray.length - 1) { //this resets the index
+		index = 0; //this resets the index
+		var activePicture = document.getElementById(index);
+		var class1 = activePicture.className;
+			if(class1 == "slika active") { //this checks class of the active picture
+				activePicture.classList.remove("active"); //this removes active class
+			} else {
+				activePicture.className += " active"; //this adds active class
+			}
 	} else {
 		index++;
-		slika1.style.backgroundImage = "url("+ slike[index] +")";
+		var activePicture = document.getElementById(index);
+		var class1 = activePicture.className;		
+			if(class1 == "slika active") {
+				activePicture.classList.remove("active");
+			} else {
+				activePicture.className += " active";
+			}
+	}
+
+	for (var i = 0; i < picturesArray.length; i++) {
+		if(activePicture.className == inactivePictures[i].className) {//inactivePictures[i].className
+			inactivePictures[i].classList.remove("active");
+		} 
 	}
 }
 
-function indeksMinus() {
-	if (index <= 0) {
-		index = slike.length - 1;
-		slika1.style.backgroundImage = "url("+ slike[index] +")";
+//function that executes on click of back button
+function indexMinus() { 
+	var inactivePictures = [];
+	var notIndex = [0,1,2,3,4];
+	var notIndex1 = notIndex.splice(index, 1);
+
+	for (var i = 0; i < picturesArray.length; i++) {
+	inactivePictures[i] = document.getElementById(notIndex1);
+	} 
+
+		if (index <= 0) {
+		index = picturesArray.length - 1;
+		var activePicture = document.getElementById(index);
+		var class1 = activePicture.className;
+		if(class1 == "slika active") { //this checks class of the active picture
+			activePicture.classList.remove("active"); //this removes active class
+		} else {
+			activePicture.className += " active"; //this adds active class
+		}
+
 	} else {
 		index--;
-		slika1.style.backgroundImage = "url("+ slike[index] +")";
+		var activePicture = document.getElementById(index);
+		var class1 = activePicture.className;		
+		if(class1 == "slika active") {
+			activePicture.classList.remove("active");
+		} else {
+			activePicture.className += " active";
+		}
+
 	}
+
+
+
+	for (var i = 0; i < picturesArray.length; i++) {
+		if(activePicture.className == inactivePictures[i].className) {
+			inactivePictures[i].classList.remove("active");
+		} 
+	}
+
 	
 }
 
-nazaj.addEventListener('click', indeksMinus);
-naprej.addEventListener('click', indeksPlus);
+//event listeners
+nazaj.addEventListener('click', indexMinus);
+naprej.addEventListener('click', indexPlus);
+
+// function indexMinus() {
+// 	if (index <= 0) {
+// 		index = slike.length - 1;
+// //		slika1.style.backgroundImage = "url("+ slike[index] +")";
+// 	} else {
+// 		index--;
+// //		slika1.style.backgroundImage = "url("+ slike[index] +")";
+// 	}
+	
+// }
+
+
+// var slika = document.getElementsByClassName('this1')[0];
+// var slika1 = document.getElementsByClassName('slika')[0];
