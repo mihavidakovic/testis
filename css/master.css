@@ -63,28 +63,33 @@ footer {
   overflow: hidden; }
   .slider .kontrola {
     position: absolute;
-    top: 0;
+    width: 50%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-    width: 100px;
-    transition: 100ms all ease-in-out;
+    top: 0;
     z-index: 20; }
-    .slider .kontrola:hover {
-      background-color: rgba(0, 0, 0, 0.4);
-      cursor: pointer; }
     .slider .kontrola i {
       position: absolute;
+      width: 70px;
       top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
       color: #FFF;
-      font-size: 2em; }
+      font-size: 2em;
+      background-color: rgba(0, 0, 0, 0.3);
+      text-align: center;
+      padding: 20px 0;
+      transition: 300ms all ease-in-out; }
+    .slider .kontrola:hover i {
+      background-color: rgba(0, 0, 0, 0.6); }
     .slider .kontrola.nazaj {
       left: 0; }
+      .slider .kontrola.nazaj i {
+        left: 0px; }
     .slider .kontrola.naprej {
       right: 0; }
+      .slider .kontrola.naprej i {
+        right: 0px; }
   .slider .slika {
     position: absolute;
     width: 100%;
