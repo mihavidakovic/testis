@@ -60,6 +60,7 @@ footer
 	float: left
 	position: relative
 	margin-bottom: 20px
+	overflow: hidden
 	.kontrola
 		position: absolute
 		top: 0
@@ -91,5 +92,10 @@ footer
 		background-size: cover 
 		background-position: center 
 		z-index: 5
+		transform: translateX(-10%) scale(1.2)
+		transition: 300ms all ease-in-out
+		opacity: 0
 		&.active
+			opacity: 1
+			transform: translateX(0%) scale(1)
 			z-index: 15

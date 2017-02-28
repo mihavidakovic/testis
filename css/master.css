@@ -59,7 +59,8 @@ footer {
   height: 400px;
   float: left;
   position: relative;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  overflow: hidden; }
   .slider .kontrola {
     position: absolute;
     top: 0;
@@ -92,6 +93,15 @@ footer {
     -o-background-size: cover;
     background-size: cover;
     background-position: center;
-    z-index: 5; }
+    z-index: 5;
+    -webkit-transform: translateX(-10%) scale(1.2);
+    -ms-transform: translateX(-10%) scale(1.2);
+    transform: translateX(-10%) scale(1.2);
+    transition: 300ms all ease-in-out;
+    opacity: 0; }
     .slider .slika.active {
+      opacity: 1;
+      -webkit-transform: translateX(0%) scale(1);
+      -ms-transform: translateX(0%) scale(1);
+      transform: translateX(0%) scale(1);
       z-index: 15; }
