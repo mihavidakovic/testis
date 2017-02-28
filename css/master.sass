@@ -1,3 +1,5 @@
+@import 'bourbon/bourbon'
+
 body
 	background-color: #24292e
 	margin: 0
@@ -10,9 +12,79 @@ body
 .float-right
 	float: right
 
-.navbar
-	.navbar-nav
-		float: right !important
+header
+	width: 100%
+	float: left
+	.navbar
+		top: 0
+		left: 0
+		position: fixed
+		width: 100%
+		z-index: 30
+		&:before
+			content: ""
+			position: fixed
+			width: 100%
+			height: 60px
+			top: 0
+			left: 0
+			background-color: transparent !important 
+			+linear-gradient(rgba(#000, 0.9), rgba(#000, 0.5))
+	.bg-inverse
+		background-color: transparent !important
+	.slider
+		width: 100%
+		height: 600px
+		float: left
+		position: relative
+		margin-bottom: 20px
+		overflow: hidden
+		.kontrola
+			position: absolute
+			width: 50%
+			height: 100%
+			top: 0
+			z-index: 20
+			cursor: pointer
+			i
+				position: absolute
+				width: 70px
+				top: 50%
+				transform: translateY(-50%)
+				color: #FFF 
+				font-size: 2em
+				background-color: rgba(#000, 0.3) 
+				text-align: center
+				padding: 20px 0 
+				transition: 300ms all ease-in-out
+			&:hover
+				i
+					background-color: rgba(#000, 0.6) 
+			&.nazaj
+				left: 0
+				i
+					left: 0px
+			&.naprej
+				right: 0
+				i
+					right: 0px
+		.slika
+			position: absolute
+			width: 100%
+			height: 100%
+			-webkit-background-size: cover 
+			-o-background-size: cover 
+			background-size: cover 
+			background-position: center 
+			z-index: 5
+			transform: translateX(-10%) scale(1.2)
+			transition: 300ms all ease-in-out
+			opacity: 0
+			&.active
+				opacity: 1
+				transform: translateX(0%) scale(1)
+				z-index: 15
+
 main
 	width: 100%
 	float: left
@@ -53,56 +125,3 @@ footer
 			margin: 0
 			color: rgba(#fff, 0.6)
 			font-size: 0.8em 
-			
-.slider
-	width: 100%
-	height: 400px
-	float: left
-	position: relative
-	margin-bottom: 20px
-	overflow: hidden
-	.kontrola
-		position: absolute
-		width: 50%
-		height: 100%
-		top: 0
-		z-index: 20
-		cursor: pointer
-		i
-			position: absolute
-			width: 70px
-			top: 50%
-			transform: translateY(-50%)
-			color: #FFF 
-			font-size: 2em
-			background-color: rgba(#000, 0.3) 
-			text-align: center
-			padding: 20px 0 
-			transition: 300ms all ease-in-out
-		&:hover
-			i
-				background-color: rgba(#000, 0.6) 
-		&.nazaj
-			left: 0
-			i
-				left: 0px
-		&.naprej
-			right: 0
-			i
-				right: 0px
-	.slika
-		position: absolute
-		width: 100%
-		height: 100%
-		-webkit-background-size: cover 
-		-o-background-size: cover 
-		background-size: cover 
-		background-position: center 
-		z-index: 5
-		transform: translateX(-10%) scale(1.2)
-		transition: 300ms all ease-in-out
-		opacity: 0
-		&.active
-			opacity: 1
-			transform: translateX(0%) scale(1)
-			z-index: 15

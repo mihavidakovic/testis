@@ -10,8 +10,79 @@ body {
 .float-right {
   float: right; }
 
-.navbar .navbar-nav {
-  float: right !important; }
+header {
+  width: 100%;
+  float: left; }
+  header .navbar {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 30; }
+    header .navbar:before {
+      content: "";
+      position: fixed;
+      width: 100%;
+      height: 60px;
+      top: 0;
+      left: 0;
+      background-color: transparent !important;
+      background-color: rgba(0, 0, 0, 0.9);
+      background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
+      background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)); }
+  header .bg-inverse {
+    background-color: transparent !important; }
+  header .slider {
+    width: 100%;
+    height: 600px;
+    float: left;
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden; }
+    header .slider .kontrola {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      z-index: 20;
+      cursor: pointer; }
+      header .slider .kontrola i {
+        position: absolute;
+        width: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #FFF;
+        font-size: 2em;
+        background-color: rgba(0, 0, 0, 0.3);
+        text-align: center;
+        padding: 20px 0;
+        transition: 300ms all ease-in-out; }
+      header .slider .kontrola:hover i {
+        background-color: rgba(0, 0, 0, 0.6); }
+      header .slider .kontrola.nazaj {
+        left: 0; }
+        header .slider .kontrola.nazaj i {
+          left: 0px; }
+      header .slider .kontrola.naprej {
+        right: 0; }
+        header .slider .kontrola.naprej i {
+          right: 0px; }
+    header .slider .slika {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: center;
+      z-index: 5;
+      transform: translateX(-10%) scale(1.2);
+      transition: 300ms all ease-in-out;
+      opacity: 0; }
+      header .slider .slika.active {
+        opacity: 1;
+        transform: translateX(0%) scale(1);
+        z-index: 15; }
 
 main {
   width: 100%;
@@ -53,61 +124,3 @@ footer {
       margin: 0;
       color: rgba(255, 255, 255, 0.6);
       font-size: 0.8em; }
-
-.slider {
-  width: 100%;
-  height: 400px;
-  float: left;
-  position: relative;
-  margin-bottom: 20px;
-  overflow: hidden; }
-  .slider .kontrola {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    top: 0;
-    z-index: 20;
-    cursor: pointer; }
-    .slider .kontrola i {
-      position: absolute;
-      width: 70px;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
-      color: #FFF;
-      font-size: 2em;
-      background-color: rgba(0, 0, 0, 0.3);
-      text-align: center;
-      padding: 20px 0;
-      transition: 300ms all ease-in-out; }
-    .slider .kontrola:hover i {
-      background-color: rgba(0, 0, 0, 0.6); }
-    .slider .kontrola.nazaj {
-      left: 0; }
-      .slider .kontrola.nazaj i {
-        left: 0px; }
-    .slider .kontrola.naprej {
-      right: 0; }
-      .slider .kontrola.naprej i {
-        right: 0px; }
-  .slider .slika {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center;
-    z-index: 5;
-    -webkit-transform: translateX(-10%) scale(1.2);
-    -ms-transform: translateX(-10%) scale(1.2);
-    transform: translateX(-10%) scale(1.2);
-    transition: 300ms all ease-in-out;
-    opacity: 0; }
-    .slider .slika.active {
-      opacity: 1;
-      -webkit-transform: translateX(0%) scale(1);
-      -ms-transform: translateX(0%) scale(1);
-      transform: translateX(0%) scale(1);
-      z-index: 15; }
