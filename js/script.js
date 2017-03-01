@@ -102,7 +102,7 @@ function indexMinus() {
 	
 }
 //na ta način omejimo sprožanje funkcije prevečkrat kar lahko ogrozi stabilnost brskalnika
-function debounce(func, wait = 10, immediate) {
+function debounce(func, wait = 1, immediate) {
 	var timeout;
 	return function() {
 		var context = this, args = arguments;
@@ -129,10 +129,18 @@ function checkForScroll(e) {
 	}
 }
 
+function checkForScrollHidden(e) {
+	if (window.scrollY > 100 && window.scrollY < 600) {
+		navbar.classList.add("skrito");
+	} else {
+		navbar.classList.remove("skrito");
+	}
+}
+
 
 //event listeners
 nazaj.addEventListener('click', indexMinus);
 naprej.addEventListener('click', indexPlus);
 window.addEventListener('scroll', debounce(checkForScroll));
-
+window.addEventListener('scroll', debounce(checkForScrollHidden));
 
