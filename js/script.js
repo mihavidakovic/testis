@@ -101,22 +101,38 @@ function indexMinus() {
 
 	
 }
+//na ta način omejimo sprožanje funkcije prevečkrat kar lahko ogrozi stabilnost brskalnika
+function debounce(func, wait = 10, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+
+//dobivanje navbara na classname "navbar"
+var navbar = document.getElementsByClassName('navbar')[0];
+
+//funkcija ku preverja kje se nahajamo na strani
+function checkForScroll(e) {
+	if (window.scrollY >= 600) {
+		navbar.classList.add("bg", "fixed");
+	} else {
+		navbar.classList.remove("bg", "fixed");
+	}
+}
+
 
 //event listeners
 nazaj.addEventListener('click', indexMinus);
 naprej.addEventListener('click', indexPlus);
-
-// function indexMinus() {
-// 	if (index <= 0) {
-// 		index = slike.length - 1;
-// //		slika1.style.backgroundImage = "url("+ slike[index] +")";
-// 	} else {
-// 		index--;
-// //		slika1.style.backgroundImage = "url("+ slike[index] +")";
-// 	}
-	
-// }
+window.addEventListener('scroll', debounce(checkForScroll));
 
 
-// var slika = document.getElementsByClassName('this1')[0];
-// var slika1 = document.getElementsByClassName('slika')[0];
