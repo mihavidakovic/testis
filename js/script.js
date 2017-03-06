@@ -137,10 +137,17 @@ function checkForScrollHidden(e) {
 	}
 }
 
+var timerZaSlide = setInterval(autoSlide, 5000);
+
+function autoSlide() {
+	indexPlus();
+}
+
 
 //event listeners
 nazaj.addEventListener('click', indexMinus);
 naprej.addEventListener('click', indexPlus);
 window.addEventListener('scroll', debounce(checkForScroll));
 window.addEventListener('scroll', debounce(checkForScrollHidden));
+document.addEventListener('DOMContentLoaded', autoSlide);
 
