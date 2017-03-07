@@ -11,10 +11,11 @@ for (var i = 0; i < 5; i++) {
 	}
 
 var test = localStorage.getItem("indeks");
-
 if (test == null) {
 	localStorage.setItem("indeks", 0);
 }
+
+
 //setting the first picture
 var index = localStorage.getItem("indeks");
 var firstPicture = document.getElementById(localStorage.getItem("indeks"));
@@ -28,7 +29,6 @@ if(class2 == class2) {
 
 //function that executes on click of next button
 function indexPlus() {
-
 	var inactivePictures = [];
 	var notIndex = [0,1,2,3,4];
 	var notIndex1 = notIndex.splice(index, 1);
@@ -57,14 +57,12 @@ function indexPlus() {
 				activePicture.className += " active";
 			}
 	}
-
 	for (var i = 0; i < picturesArray.length; i++) {
 		if(activePicture.className == inactivePictures[i].className) {//inactivePictures[i].className
 			inactivePictures[i].classList.remove("active");
 		} 
 	}
-
-	// //shranimo indeks v localstorage
+	//shranimo indeks v localstorage
 	localStorage.setItem("indeks", index);
 }
 
@@ -78,7 +76,7 @@ function indexMinus() {
 	inactivePictures[i] = document.getElementById(notIndex1);
 	} 
 
-		if (index <= 0) {
+	if (index <= 0) {
 		index = picturesArray.length - 1;
 		var activePicture = document.getElementById(index);
 		var class1 = activePicture.className;
@@ -99,19 +97,16 @@ function indexMinus() {
 		}
 
 	}
-
-
 	//preverjanje če je klasa neaktivnih slik enaka aktivni sliki
 	for (var i = 0; i < picturesArray.length; i++) {
 		if(activePicture.className == inactivePictures[i].className) {
 			inactivePictures[i].classList.remove("active");
 		} 
 	}
-
-	
-	// //shranimo indeks v localstorage
+	//shranimo indeks v localstorage
 	localStorage.setItem("indeks", index);
 }
+
 //na ta način omejimo sprožanje funkcije prevečkrat kar lahko ogrozi stabilnost brskalnika
 function debounce(func, wait = 1, immediate) {
 	var timeout;
@@ -131,7 +126,7 @@ function debounce(func, wait = 1, immediate) {
 //dobivanje navbara na classname "navbar"
 var navbar = document.getElementsByClassName('navbar')[0];
 
-//funkcija ku preverja kje se nahajamo na strani
+//funkcija ki preverja kje se nahajamo na strani
 function checkForScroll(e) {
 	if (window.scrollY >= 600) {
 		navbar.classList.add("bg", "fixed");
@@ -164,5 +159,3 @@ nazaj.addEventListener('click', indexMinus);
 naprej.addEventListener('click', indexPlus);
 window.addEventListener('scroll', debounce(checkForScroll));
 window.addEventListener('scroll', debounce(checkForScrollHidden));
-
-
