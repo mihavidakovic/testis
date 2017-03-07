@@ -11,14 +11,16 @@ for (var i = 0; i < 5; i++) {
 	}
 
 //setting the first picture
-var index = 0;
-var firstPicture = document.getElementById(index);
+var index = localStorage.getItem("indeks");
+var firstPicture = document.getElementById(localStorage.getItem("indeks"));
 var class2 = firstPicture.className;
 if(class2 == class2) {
 	firstPicture.className += " active";
 } else {
 	firstPicture.className -= " active";
 }
+
+var test = localStorage.getItem("indeks");
 
 //function that executes on click of next button
 function indexPlus() {
@@ -57,6 +59,9 @@ function indexPlus() {
 			inactivePictures[i].classList.remove("active");
 		} 
 	}
+
+	// //shranimo indeks v localstorage
+	localStorage.setItem("indeks", index);
 }
 
 //function that executes on click of back button
@@ -92,7 +97,7 @@ function indexMinus() {
 	}
 
 
-
+	//preverjanje če je klasa neaktivnih slik enaka aktivni sliki
 	for (var i = 0; i < picturesArray.length; i++) {
 		if(activePicture.className == inactivePictures[i].className) {
 			inactivePictures[i].classList.remove("active");
@@ -100,6 +105,8 @@ function indexMinus() {
 	}
 
 	
+	// //shranimo indeks v localstorage
+	localStorage.setItem("indeks", index);
 }
 //na ta način omejimo sprožanje funkcije prevečkrat kar lahko ogrozi stabilnost brskalnika
 function debounce(func, wait = 1, immediate) {
@@ -137,10 +144,21 @@ function checkForScrollHidden(e) {
 	}
 }
 
+//interval za sprožanje funkcije autoSlide, čas je v milisekundah
+var timerZaSlide = setInterval(autoSlide, 5000);
+
+
+//autoSlide funkcija poskrbi za avtomatsko prestavljanje slajdov
+function autoSlide() {
+	test = test - 1;
+	indexPlus();
+}
+
 
 //event listeners
 nazaj.addEventListener('click', indexMinus);
 naprej.addEventListener('click', indexPlus);
 window.addEventListener('scroll', debounce(checkForScroll));
 window.addEventListener('scroll', debounce(checkForScrollHidden));
+
 
