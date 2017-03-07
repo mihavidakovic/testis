@@ -10,6 +10,11 @@ for (var i = 0; i < 5; i++) {
 	picturesArray[i] = document.getElementById(i);
 	}
 
+var test = localStorage.getItem("indeks");
+
+if (test == null) {
+	localStorage.setItem("indeks", 0);
+}
 //setting the first picture
 var index = localStorage.getItem("indeks");
 var firstPicture = document.getElementById(localStorage.getItem("indeks"));
@@ -20,7 +25,6 @@ if(class2 == class2) {
 	firstPicture.className -= " active";
 }
 
-var test = localStorage.getItem("indeks");
 
 //function that executes on click of next button
 function indexPlus() {
