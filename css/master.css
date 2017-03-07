@@ -38,7 +38,13 @@ header {
       height: 100%;
       top: 0;
       z-index: 20;
-      cursor: pointer; }
+      cursor: pointer;
+      opacity: 0.3;
+      -webkit-transition: 100ms all ease-in-out;
+      -moz-transition: 100ms all ease-in-out;
+      transition: 100ms all ease-in-out; }
+      header .slider .kontrola:active i {
+        background-color: black; }
       header .slider .kontrola i {
         position: absolute;
         width: 70px;
@@ -52,18 +58,18 @@ header {
         text-align: center;
         padding: 20px 0;
         transition: 300ms all ease-in-out; }
-      header .slider .kontrola:hover i {
-        background-color: rgba(0, 0, 0, 0.6); }
+      header .slider .kontrola:hover {
+        opacity: 1; }
+        header .slider .kontrola:hover i {
+          background-color: rgba(0, 0, 0, 0.6); }
       header .slider .kontrola.nazaj {
         left: 0; }
         header .slider .kontrola.nazaj i {
-          left: 0px;
-          padding-right: 15px; }
+          left: 10px; }
       header .slider .kontrola.naprej {
         right: 0; }
         header .slider .kontrola.naprej i {
-          right: 0px;
-          padding-left: 15px; }
+          right: 10px; }
     header .slider .slika {
       position: absolute;
       width: 100%;
