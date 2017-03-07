@@ -113,7 +113,24 @@ main
 	width: 100%
 	float: left
 	margin-top: 20px
-
+	.feature
+		padding: 150px 0
+		&.left
+			.img
+				img
+					transform: translateX(-100%)
+		&.right
+			.img
+				img
+					transform: translateX(100%)
+		.img
+			float: left
+			position: relative
+			img
+				width: 100%
+				position: absolute
+		.info
+			float: left
 aside
 	margin-top: 20px
 	height: auto
@@ -127,6 +144,55 @@ aside
 		ul
 			list-style: none
 
+$supporters-height: 140px
+
+.supporters
+	width: 100%
+	float: left
+	background-color: rgba(#000, 0.1) 
+	height: $supporters-height
+	margin-top: 100px
+	ul
+		width: 100%
+		float: left
+		+align-items(stretch)
+		+display(flex)
+		+flex-direction(row)
+		+justify-content(flex-start)
+		list-style: none
+		padding: 0px 0
+		height: $supporters-height
+		li
+			+flex(1)
+			position: relative
+			height: $supporters-height
+			opacity: 0.4
+			&:hover
+				opacity: 1
+				cursor: pointer
+			&:nth-child(1)
+				img
+					width: 40%
+			&:nth-child(2)
+				img
+					width: 50%
+			&:nth-child(3)
+				img
+					width: 70%
+			&:nth-child(4)
+				img
+					width: 60%
+			&:nth-child(5)
+				img
+					width: 50%
+			&:nth-child(6)
+				img
+					width: 50%
+			img
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
 footer
 	width: 100%
 	float: left
