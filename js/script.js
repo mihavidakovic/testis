@@ -1,9 +1,7 @@
 var nazaj = document.getElementsByClassName('nazaj')[0];
 var naprej = document.getElementsByClassName('naprej')[0];
 
-
 var picturesArray = []; //creating array of pictures
-
 
 //populating array by getting ids
 for (var i = 0; i < 5; i++) {
@@ -22,9 +20,10 @@ if(class2 == class2) {
 
 var test = localStorage.getItem("indeks");
 
+//spremenljivka ki določa status auto slide funkcije
+var activeAutoSlide = true;
 //function that executes on click of next button
 function indexPlus() {
-
 	var inactivePictures = [];
 	var notIndex = [0,1,2,3,4];
 	var notIndex1 = notIndex.splice(index, 1);
@@ -32,8 +31,6 @@ function indexPlus() {
 	for (var i = 0; i < picturesArray.length; i++) {
 	inactivePictures[i] = document.getElementById(notIndex1);
 } 
-
-
 	if (index >= picturesArray.length - 1) { //this resets the index
 		index = 0; //this resets the index
 		var activePicture = document.getElementById(index);
@@ -53,15 +50,14 @@ function indexPlus() {
 				activePicture.className += " active";
 			}
 	}
-
 	for (var i = 0; i < picturesArray.length; i++) {
 		if(activePicture.className == inactivePictures[i].className) {//inactivePictures[i].className
 			inactivePictures[i].classList.remove("active");
 		} 
 	}
-
-	// //shranimo indeks v localstorage
+	//shranimo indeks v localstorage
 	localStorage.setItem("indeks", index);
+	activeAutoSlide = false;
 }
 
 //function that executes on click of back button
@@ -72,9 +68,8 @@ function indexMinus() {
 
 	for (var i = 0; i < picturesArray.length; i++) {
 	inactivePictures[i] = document.getElementById(notIndex1);
-	} 
-
-		if (index <= 0) {
+	}
+	if (index <= 0) {
 		index = picturesArray.length - 1;
 		var activePicture = document.getElementById(index);
 		var class1 = activePicture.className;
@@ -83,7 +78,6 @@ function indexMinus() {
 		} else {
 			activePicture.className += " active"; //this adds active class
 		}
-
 	} else {
 		index--;
 		var activePicture = document.getElementById(index);
@@ -93,21 +87,18 @@ function indexMinus() {
 		} else {
 			activePicture.className += " active";
 		}
-
 	}
-
-
 	//preverjanje če je klasa neaktivnih slik enaka aktivni sliki
 	for (var i = 0; i < picturesArray.length; i++) {
 		if(activePicture.className == inactivePictures[i].className) {
 			inactivePictures[i].classList.remove("active");
 		} 
 	}
-
-	
-	// //shranimo indeks v localstorage
+	//shranimo indeks v localstorage
 	localStorage.setItem("indeks", index);
+	activeAutoSlide = false;
 }
+
 //na ta način omejimo sprožanje funkcije prevečkrat kar lahko ogrozi stabilnost brskalnika
 function debounce(func, wait = 1, immediate) {
 	var timeout;
@@ -127,7 +118,7 @@ function debounce(func, wait = 1, immediate) {
 //dobivanje navbara na classname "navbar"
 var navbar = document.getElementsByClassName('navbar')[0];
 
-//funkcija ku preverja kje se nahajamo na strani
+//funkcija ki preverja kje se nahajamo na strani
 function checkForScroll(e) {
 	if (window.scrollY >= 600) {
 		navbar.classList.add("bg", "fixed");
@@ -144,14 +135,18 @@ function checkForScrollHidden(e) {
 	}
 }
 
+
+
 //interval za sprožanje funkcije autoSlide, čas je v milisekundah
 var timerZaSlide = setInterval(autoSlide, 5000);
-
-
 //autoSlide funkcija poskrbi za avtomatsko prestavljanje slajdov
 function autoSlide() {
-	test = test - 1;
-	indexPlus();
+	if (activeAutoSlide == true) {
+		test = test - 1;
+		indexPlus();
+	} else {
+		activeAutoSlide = true;
+	}
 }
 
 
