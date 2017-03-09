@@ -131,7 +131,10 @@ main {
       position: relative; }
       main .feature .img img {
         width: 100%;
-        position: absolute; }
+        position: absolute;
+        -webkit-transition: 200ms all ease-in-out;
+        -moz-transition: 200ms all ease-in-out;
+        transition: 200ms all ease-in-out; }
     main .feature .info {
       float: left; }
 
