@@ -18,11 +18,17 @@ header {
     left: 0;
     position: absolute;
     width: 100%;
-    z-index: 30; }
+    z-index: 30;
+    -webkit-transition: 200ms all ease-in-out;
+    -moz-transition: 200ms all ease-in-out;
+    transition: 200ms all ease-in-out; }
     header .navbar.fixed {
-      position: fixed; }
+      position: fixed;
+      top: 0; }
     header .navbar.bg {
       background-color: rgba(0, 0, 0, 0.9) !important; }
+    header .navbar.skrito {
+      top: -60px; }
   header .bg-inverse {
     background-color: transparent !important; }
   header .slider {

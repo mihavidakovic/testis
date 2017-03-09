@@ -21,10 +21,14 @@ header
 		position: absolute
 		width: 100%
 		z-index: 30
+		+transition(200ms all ease-in-out)
 		&.fixed
 			position: fixed
+			top: 0
 		&.bg
 			background-color: rgba(#000, 0.9) !important
+		&.skrito
+			top: -60px
 	.bg-inverse
 		background-color: transparent !important
 	.slider
