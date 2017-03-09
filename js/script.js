@@ -149,11 +149,29 @@ function autoSlide() {
 	}
 }
 
+//slide in
+const slikeZaSlide = document.querySelectorAll('.slide-in');
+function slikeSlide(e) {
+	slikeZaSlide.forEach(slikaZaSlide => {
+		const slideInAt = (window.scrollY + window.innerHeight) - slikaZaSlide.height / 2;
+		const imageBottom = slikaZaSlide.offsetTop + slikaZaSlide.height;
+        const isHalfShown = slideInAt > slikaZaSlide.offsetTop;
+        const isNotScrolledPast = window.scrollY < imageBottom;
+        if (isHalfShown && isNotScrolledPast) {
+          slikaZaSlide.style.transform = "translateX(-100%)";
+        } else {
+          slikaZaSlide.style.transform = "translateX(0%)";
+        }
+
+	});
+}
+
 
 //event listeners
 nazaj.addEventListener('click', indexMinus);
 naprej.addEventListener('click', indexPlus);
 window.addEventListener('scroll', debounce(checkForScroll));
 window.addEventListener('scroll', debounce(checkForScrollHidden));
+window.addEventListener('scroll', debounce(slikeSlide));
 
 
