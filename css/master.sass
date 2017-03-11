@@ -179,10 +179,12 @@ main
 					position: relative
 					text-align: center
 					height: 100%
+					cursor: pointer
 					&:nth-child(1)
 						+flex-grow(1)
 					&:nth-child(2)
 						+flex-grow(20)
+						cursor: default
 						&:hover
 							.progress-loaded
 								.progress-current
