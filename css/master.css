@@ -200,7 +200,10 @@ main {
             left: 0;
             top: 0;
             height: 100%;
-            background-color: #E74C3C; }
+            background-color: #E74C3C;
+            -webkit-transition: 10ms all ease-in-out;
+            -moz-transition: 10ms all ease-in-out;
+            transition: 10ms all ease-in-out; }
             main .video .kontrole .progress .progress-loaded .progress-current .handle {
               position: absolute;
               right: -5px;
