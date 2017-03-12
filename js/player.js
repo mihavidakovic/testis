@@ -5,7 +5,9 @@ const playPause = player.querySelector('.video-play');
 const tipkaPP = playPause.querySelector('.ion-ios-play');
 const fullScreen = player.querySelector('.ion-android-expand');
 const progressBar = player.querySelector('.progress-current');
+
 const statusCircle =  player.querySelector('.state');
+const statusCirclePrikaz = statusCircle.querySelector('.ion-ios-play');
 
 //status krog na sredini
 var showStatusCircle = false;
@@ -24,11 +26,13 @@ function playPauseVideo() {
 		tipkaPP.className = "ion-ios-pause";
 		showStatusCircle = true;
 		statusCircle.classList.add('visible');
+		statusCirclePrikaz.className = "ion-ios-play";
 		video.play();
 	} else {
 		tipkaPP.className = "ion-ios-play";
 		showStatusCircle = true;
 		statusCircle.classList.add('visible');
+		statusCirclePrikaz.className = "ion-ios-pause";
 		video.pause();
 	}
 	setTimeout(statusCircleUpdate, 400);
