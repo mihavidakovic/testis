@@ -204,10 +204,9 @@ main
 				.progress
 					height: 5px
 					cursor: pointer
-					.progress-loaded
-						.progress-current
-							.handle
-								transform: translateY(-50%) scale(1)
+					.progress-current
+						.handle
+							transform: translateY(-50%) scale(1)
 
 			.progress
 				width: calc(100% - 20px)
@@ -225,25 +224,25 @@ main
 					top: 0
 					height: 100%
 					background-color: rgba(#fff, 0.4) 
-					.progress-current
+				.progress-current
+					position: absolute
+					left: 0
+					top: 0
+					height: 100%
+					background-color: #E74C3C  
+					+transition(10ms all ease-in-out)
+					.handle
 						position: absolute
-						left: 0
-						top: 0
-						height: 100%
-						background-color: #E74C3C  
-						+transition(10ms all ease-in-out)
-						.handle
-							position: absolute
-							right: -5px
-							top: 50%
-							+size(11px)
-							cursor: pointer
-							border-radius: 100% 
-							background-color: #FFF 
-							box-shadow: 0 1px 3px 0px rgba(#000, 0.3)  
-							z-index: 10 
-							transform: translateY(-50%) scale(0)
-							+transition(200ms all ease-in-out)
+						right: -5px
+						top: 50%
+						+size(11px)
+						cursor: pointer
+						border-radius: 100% 
+						background-color: #FFF 
+						box-shadow: 0 1px 3px 0px rgba(#000, 0.3)  
+						z-index: 10 
+						transform: translateY(-50%) scale(0)
+						+transition(200ms all ease-in-out)
 			ul
 				list-style: none
 				padding: 0
