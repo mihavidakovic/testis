@@ -9,6 +9,9 @@ const progressBar = player.querySelector('.progress-current');
 const statusCircle =  player.querySelector('.state');
 const statusCirclePrikaz = statusCircle.querySelector('.ion-ios-play');
 
+const cas = player.querySelector('.video-time');
+const casPrikaz = cas.querySelector('.time');
+
 //status krog na sredini
 var showStatusCircle = false;
 
@@ -55,6 +58,19 @@ function handleProgressBar() {
 	progressBar.style = "width: " + procent + "%";
 }
 
+function trenutniKoncniCas() {
+	var sekundeT = parseInt(video.currentTime % 60);
+	var minuteT = parseInt((video.currentTime / 60) % 60);
+
+	var sekundeK = parseInt(video.duration % 60);
+	var minuteK = parseInt((video.duration / 60) % 60);
+	casPrikaz.innerHTML = minuteT + ":" + sekundeT + " / " + minuteK + ":" + sekundeK;
+
+	if (video.currentTime == video.duration) {
+		video.pause();
+		tipkaPP.className = "ion-ios-refresh";
+	}
+}
 
 //event listenerji za player
 video.addEventListener('click', playPauseVideo);
@@ -62,3 +78,4 @@ playPause.addEventListener('click', playPauseVideo);
 statusCircle.addEventListener('click', playPauseVideo);
 fullScreen.addEventListener('click', fullScreenExpand);
 video.addEventListener('timeupdate', handleProgressBar);
+video.addEventListener('timeupdate', trenutniKoncniCas);
