@@ -1,8 +1,9 @@
+//slider kontrole
 var nazaj = document.getElementsByClassName('nazaj')[0];
 var naprej = document.getElementsByClassName('naprej')[0];
 
+//SLIDER
 var picturesArray = []; //creating array of pictures
-
 //populating array by getting ids
 for (var i = 0; i < 5; i++) {
 	picturesArray[i] = document.getElementById(i);
@@ -136,7 +137,6 @@ function checkForScrollHidden(e) {
 }
 
 
-
 //interval za sprožanje funkcije autoSlide, čas je v milisekundah
 var timerZaSlide = setInterval(autoSlide, 5000);
 //autoSlide funkcija poskrbi za avtomatsko prestavljanje slajdov
@@ -166,12 +166,9 @@ function slikeSlide(e) {
 	});
 }
 
-
 //event listeners
 nazaj.addEventListener('click', indexMinus);
 naprej.addEventListener('click', indexPlus);
 window.addEventListener('scroll', debounce(checkForScroll));
 window.addEventListener('scroll', debounce(checkForScrollHidden));
 window.addEventListener('scroll', debounce(slikeSlide));
-
-
