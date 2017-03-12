@@ -13,6 +13,51 @@ body {
 .float-right {
   float: right; }
 
+@-webkit-keyframes state {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0; }
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0; } }
+
+@-moz-keyframes state {
+  0% {
+    -moz-transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0; }
+  50% {
+    -moz-transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1; }
+  100% {
+    -moz-transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0; } }
+
+@keyframes state {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0.6);
+    -moz-transform: translate(-50%, -50%) scale(0.6);
+    -ms-transform: translate(-50%, -50%) scale(0.6);
+    -o-transform: translate(-50%, -50%) scale(0.6);
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0; }
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+    -moz-transform: translate(-50%, -50%) scale(1.2);
+    -ms-transform: translate(-50%, -50%) scale(1.2);
+    -o-transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+    -moz-transform: translate(-50%, -50%) scale(1.2);
+    -ms-transform: translate(-50%, -50%) scale(1.2);
+    -o-transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0; } }
+
 header {
   width: 100%;
   float: left; }
@@ -152,6 +197,41 @@ main {
       width: 100% !important;
       height: auto !important;
       float: left; }
+    main .video .state {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 200px;
+      background-color: rgba(0, 0, 0, 0.7);
+      -webkit-border-radius: 100%;
+      border-radius: 100%;
+      opacity: 0; }
+      main .video .state.visible {
+        -webkit-animation: state 450ms ease-in-out;
+        -moz-animation: state 450ms ease-in-out;
+        animation: state 450ms ease-in-out;
+        -webkit-animation-iteration-count: 1;
+        -moz-animation-iteration-count: 1;
+        animation-iteration-count: 1; }
+      main .video .state.play i {
+        left: 52%; }
+      main .video .state i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 6em;
+        color: #FFF; }
     main .video .kontrole {
       position: absolute;
       padding: 0 10px;
