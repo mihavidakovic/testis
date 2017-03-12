@@ -169,24 +169,23 @@ main
 			top: 50%
 			left: 50%
 			+transform(translate(-50%, -50%))
-			width: 200px
-			height: 200px
-			background-color: rgba(#000, 0.7) 
+			width: 150px
+			height: 150px
+			background-color: rgba(#111, 0.85) 
 			-webkit-border-radius: 100% 
 			border-radius: 100% 
 			opacity: 0
 			&.visible
-				+animation(state 450ms ease-in-out)
+				+animation(state 450ms $ease-in-out-circ)
 				+animation-iteration-count(1)
-			&.play
-				i
-					left: 52%
+			.ion-ios-play
+				left: 52%
 			i
 				position: absolute
 				top: 50%
 				left: 50%
 				+transform(translate(-50%, -50%))
-				font-size: 6em
+				font-size: 5em
 				color: #FFF  
 		$kontrole-height: 60px
 		.kontrole

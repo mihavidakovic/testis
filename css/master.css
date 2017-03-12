@@ -206,20 +206,20 @@ main {
       -ms-transform: translate(-50%, -50%);
       -o-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
-      width: 200px;
-      height: 200px;
-      background-color: rgba(0, 0, 0, 0.7);
+      width: 150px;
+      height: 150px;
+      background-color: rgba(17, 17, 17, 0.85);
       -webkit-border-radius: 100%;
       border-radius: 100%;
       opacity: 0; }
       main .video .state.visible {
-        -webkit-animation: state 450ms ease-in-out;
-        -moz-animation: state 450ms ease-in-out;
-        animation: state 450ms ease-in-out;
+        -webkit-animation: state 450ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        -moz-animation: state 450ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        animation: state 450ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
         -webkit-animation-iteration-count: 1;
         -moz-animation-iteration-count: 1;
         animation-iteration-count: 1; }
-      main .video .state.play i {
+      main .video .state .ion-ios-play {
         left: 52%; }
       main .video .state i {
         position: absolute;
@@ -230,7 +230,7 @@ main {
         -ms-transform: translate(-50%, -50%);
         -o-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-        font-size: 6em;
+        font-size: 5em;
         color: #FFF; }
     main .video .kontrole {
       position: absolute;
