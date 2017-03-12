@@ -154,133 +154,130 @@ main {
       float: left; }
     main .video .kontrole {
       position: absolute;
-      bottom: -30px;
+      padding: 0 10px;
+      bottom: 0;
       left: 0;
       width: 100%;
-      height: 30px;
-      background-color: rgba(255, 255, 255, 0.9);
+      height: 60px;
+      padding-top: 10px;
+      background-color: transparent !important;
+      background-color: transparent;
+      background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
       opacity: 0;
       -webkit-transition: 150ms all cubic-bezier(0.86, 0, 0.07, 1);
       -moz-transition: 150ms all cubic-bezier(0.86, 0, 0.07, 1);
       transition: 150ms all cubic-bezier(0.86, 0, 0.07, 1); }
+      main .video .kontrole:hover .progress {
+        height: 5px;
+        cursor: pointer; }
+        main .video .kontrole:hover .progress .progress-loaded .progress-current .handle {
+          -webkit-transform: translateY(-50%) scale(1);
+          -ms-transform: translateY(-50%) scale(1);
+          transform: translateY(-50%) scale(1); }
+      main .video .kontrole .progress {
+        width: calc(100% - 20px);
+        left: 10px;
+        height: 3px;
+        background-color: rgba(255, 255, 255, 0.3);
+        position: absolute;
+        top: 30%;
+        overflow: visible;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: 100ms all ease-in-out;
+        -moz-transition: 100ms all ease-in-out;
+        transition: 100ms all ease-in-out; }
+        main .video .kontrole .progress .progress-loaded {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          background-color: rgba(255, 255, 255, 0.4); }
+          main .video .kontrole .progress .progress-loaded .progress-current {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background-color: #E74C3C; }
+            main .video .kontrole .progress .progress-loaded .progress-current .handle {
+              position: absolute;
+              right: -5px;
+              top: 50%;
+              height: 11px;
+              width: 11px;
+              cursor: pointer;
+              border-radius: 100%;
+              background-color: #FFF;
+              box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.3);
+              z-index: 10;
+              -webkit-transform: translateY(-50%) scale(0);
+              -ms-transform: translateY(-50%) scale(0);
+              transform: translateY(-50%) scale(0);
+              -webkit-transition: 200ms all ease-in-out;
+              -moz-transition: 200ms all ease-in-out;
+              transition: 200ms all ease-in-out; }
       main .video .kontrole ul {
         list-style: none;
         padding: 0;
-        margin: 0;
+        margin: 10px 0 0;
         float: left;
         width: 100%;
-        height: 100%;
-        -webkit-box-align: stretch;
-        -moz-box-align: stretch;
-        box-align: stretch;
-        -webkit-align-items: stretch;
-        -moz-align-items: stretch;
-        -ms-align-items: stretch;
-        -o-align-items: stretch;
-        align-items: stretch;
-        -ms-flex-align: stretch;
-        display: -webkit-box;
-        display: -moz-box;
-        display: box;
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: horizontal;
-        -moz-box-orient: horizontal;
-        box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -moz-box-direction: normal;
-        box-direction: normal;
-        -webkit-flex-direction: row;
-        -moz-flex-direction: row;
-        flex-direction: row;
-        -ms-flex-direction: row;
-        -webkit-box-pack: start;
-        -moz-box-pack: start;
-        box-pack: start;
-        -webkit-justify-content: flex-start;
-        -moz-justify-content: flex-start;
-        -ms-justify-content: flex-start;
-        -o-justify-content: flex-start;
-        justify-content: flex-start;
-        -ms-flex-pack: start;
+        height: 70%;
         position: relative; }
         main .video .kontrole ul li {
-          -webkit-box-flex: 1;
-          -moz-box-flex: 1;
-          box-flex: 1;
-          -webkit-flex: 1;
-          -moz-flex: 1;
-          -ms-flex: 1;
-          flex: 1;
+          float: left;
+          width: 40px;
           position: relative;
           text-align: center;
           height: 100%;
-          cursor: pointer; }
-          main .video .kontrole ul li:nth-child(1) {
-            -webkit-flex-grow: 1;
-            -moz-flex-grow: 1;
-            flex-grow: 1;
-            -ms-flex-positive: 1; }
-          main .video .kontrole ul li:nth-child(2) {
-            -webkit-flex-grow: 20;
-            -moz-flex-grow: 20;
-            flex-grow: 20;
-            -ms-flex-positive: 20;
-            cursor: default; }
-            main .video .kontrole ul li:nth-child(2):hover .progress-loaded .progress-current .handle {
-              -webkit-transform: scale(1.4);
-              -ms-transform: scale(1.4);
-              transform: scale(1.4);
-              top: -50%; }
-          main .video .kontrole ul li:nth-child(3) {
-            -webkit-flex-grow: 1;
-            -moz-flex-grow: 1;
-            flex-grow: 1;
-            -ms-flex-positive: 1; }
-          main .video .kontrole ul li i {
-            position: absolute;
-            color: rgba(0, 0, 0, 0.5);
-            font-size: 1.2em;
-            cursor: pointer;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
-            main .video .kontrole ul li i:hover {
-              color: rgba(0, 0, 0, 0.8); }
-            main .video .kontrole ul li i:active {
-              color: black; }
-          main .video .kontrole ul li .progress {
-            width: 100%;
-            height: 4px;
-            background-color: rgba(0, 0, 0, 0.5);
-            position: absolute;
-            top: 50%;
-            overflow: visible;
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%); }
-            main .video .kontrole ul li .progress .progress-loaded {
+          cursor: pointer;
+          margin-right: 0px; }
+          main .video .kontrole ul li.video-volume {
+            overflow: hidden;
+            -webkit-transition: 200ms all ease-in-out;
+            -moz-transition: 200ms all ease-in-out;
+            transition: 200ms all ease-in-out; }
+            main .video .kontrole ul li.video-volume:hover {
+              width: 110px; }
+              main .video .kontrole ul li.video-volume:hover .volume-progress {
+                opacity: 1; }
+            main .video .kontrole ul li.video-volume i {
+              left: 5px;
+              -webkit-transform: translate(0%, -50%);
+              -moz-transform: translate(0%, -50%);
+              -ms-transform: translate(0%, -50%);
+              -o-transform: translate(0%, -50%);
+              transform: translate(0%, -50%); }
+            main .video .kontrole ul li.video-volume .volume-progress {
               position: absolute;
-              left: 0;
-              top: 0;
-              height: 100%;
-              background-color: rgba(255, 255, 255, 0.4); }
-              main .video .kontrole ul li .progress .progress-loaded .progress-current {
+              top: 50%;
+              left: 40px;
+              width: 60px;
+              height: 3px;
+              background-color: rgba(255, 255, 255, 0.3);
+              -webkit-transform: translateY(-50%);
+              -moz-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+              -o-transform: translateY(-50%);
+              transform: translateY(-50%);
+              -webkit-transition: 100ms all ease-in-out;
+              -moz-transition: 100ms all ease-in-out;
+              transition: 100ms all ease-in-out;
+              opacity: 0; }
+              main .video .kontrole ul li.video-volume .volume-progress .volume-progress-current {
                 position: absolute;
-                left: 0;
-                top: 0;
+                top: 0%;
+                left: 0px;
                 height: 100%;
-                background-color: #E74C3C; }
-                main .video .kontrole ul li .progress .progress-loaded .progress-current .handle {
+                background-color: #fff; }
+                main .video .kontrole ul li.video-volume .volume-progress .volume-progress-current .handle {
                   position: absolute;
                   right: -5px;
                   top: 50%;
-                  height: 9px;
-                  width: 9px;
+                  height: 10px;
+                  width: 10px;
                   cursor: pointer;
                   border-radius: 100%;
                   background-color: #FFF;
@@ -292,6 +289,41 @@ main {
                   -webkit-transition: 200ms all ease-in-out;
                   -moz-transition: 200ms all ease-in-out;
                   transition: 200ms all ease-in-out; }
+          main .video .kontrole ul li.video-fullscreen {
+            float: right; }
+          main .video .kontrole ul li.video-time {
+            width: 80px;
+            position: relative; }
+            main .video .kontrole ul li.video-time p {
+              position: absolute;
+              width: 100%;
+              top: 50%;
+              left: 50%;
+              margin: 0;
+              padding: 0;
+              font-size: 0.7em;
+              color: rgba(255, 255, 255, 0.9);
+              -webkit-transform: translate(-50%, -50%);
+              -moz-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+              -o-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+              font-weight: 300;
+              letter-spacing: 1px; }
+          main .video .kontrole ul li i {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.5em;
+            cursor: pointer;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+            main .video .kontrole ul li i:hover {
+              color: rgba(255, 255, 255, 0.9); }
+            main .video .kontrole ul li i:active {
+              color: rgba(255, 255, 255, 0.98); }
 
 aside {
   margin-top: 20px;

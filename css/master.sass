@@ -152,85 +152,109 @@ main
 			width: 100% !important
 			height: auto !important
 			float: left
-		$kontrole-height: 30px
+		$kontrole-height: 60px
 		.kontrole
 			position: absolute
-			bottom: -$kontrole-height
+			padding: 0 10px
+			bottom: 0
 			left: 0
 			width: 100%
 			height: $kontrole-height
-			background-color: rgba(#fff, 0.9) 
-			opacity: 0 
+			padding-top: 10px
+			background-color: transparent !important 
+			+linear-gradient(rgba(#000, 0), rgba(#000, 0.7))
+			opacity: 0
 			+transition(150ms all $ease-in-out-quint)
+			&:hover
+				.progress
+					height: 5px
+					cursor: pointer
+					.progress-loaded
+						.progress-current
+							.handle
+								transform: translateY(-50%) scale(1)
+
+			.progress
+				width: calc(100% - 20px)
+				left: 10px
+				height: 3px
+				background-color: rgba(#fff, 0.3) 
+				position: absolute
+				top: 30%
+				overflow: visible 
+				transform: translateY(-50%)
+				+transition(100ms all ease-in-out)
+				.progress-loaded
+					position: absolute
+					left: 0
+					top: 0
+					height: 100%
+					background-color: rgba(#fff, 0.4) 
+					.progress-current
+						position: absolute
+						left: 0
+						top: 0
+						height: 100%
+						background-color: #E74C3C  
+						.handle
+							position: absolute
+							right: -5px
+							top: 50%
+							+size(11px)
+							cursor: pointer
+							border-radius: 100% 
+							background-color: #FFF 
+							box-shadow: 0 1px 3px 0px rgba(#000, 0.3)  
+							z-index: 10 
+							transform: translateY(-50%) scale(0)
+							+transition(200ms all ease-in-out)
 			ul
 				list-style: none
 				padding: 0
-				margin: 0
+				margin: 10px 0 0
 				float: left
 				width: 100%
-				height: 100%
-				+align-items(stretch)
-				+display(flex)
-				+flex-direction(row)
-				+justify-content(flex-start)
+				height: 70%
 				position: relative
 				li
-					+flex(1)
+					float: left
+					width: 40px
 					position: relative
 					text-align: center
 					height: 100%
 					cursor: pointer
-					&:nth-child(1)
-						+flex-grow(1)
-					&:nth-child(2)
-						+flex-grow(20)
-						cursor: default
+					margin-right: 0px
+					&.video-volume
+						overflow: hidden
+						+transition(200ms all ease-in-out)
 						&:hover
-							.progress-loaded
-								.progress-current
-									.handle
-										transform: scale(1.4)
-										top: -50%
-
-					&:nth-child(3)
-						+flex-grow(1)
-					i
-						position: absolute
-						color: rgba(#000, 0.5) 
-						font-size: 1.2em 
-						cursor: pointer
-						top: 50%
-						left: 50%
-						transform: translate(-50%, -50%)
-						&:hover
-							color: rgba(#000, 0.8) 
-						&:active
-							color: rgba(#000, 1) 
-					.progress
-						width: 100%
-						height: 4px
-						background-color: rgba(#000, 0.5) 
-						position: absolute
-						top: 50%
-						overflow: visible 
-						transform: translateY(-50%)
-						.progress-loaded
+							width: 110px
+							.volume-progress
+								opacity: 1
+						i
+							left: 5px
+							+transform(translate(0%, -50%))
+						.volume-progress
 							position: absolute
-							left: 0
-							top: 0
-							height: 100%
-							background-color: rgba(#fff, 0.4) 
-							.progress-current
+							top: 50%
+							left: 40px
+							width: 60px
+							height: 3px
+							background-color: rgba(#fff, 0.3) 
+							+transform(translateY(-50%))
+							+transition(100ms all ease-in-out)
+							opacity: 0
+							.volume-progress-current
 								position: absolute
-								left: 0
-								top: 0
+								top: 0%
+								left: 0px
 								height: 100%
-								background-color: #E74C3C  
+								background-color: #fff
 								.handle
 									position: absolute
 									right: -5px
 									top: 50%
-									+size(9px)
+									+size(10px)
 									cursor: pointer
 									border-radius: 100% 
 									background-color: #FFF 
@@ -238,6 +262,36 @@ main
 									z-index: 10 
 									transform: translateY(-50%)
 									+transition(200ms all ease-in-out)
+
+					&.video-fullscreen
+						float: right
+					&.video-time
+						width: 80px
+						position: relative
+						p
+							position: absolute
+							width: 100%
+							top: 50%
+							left: 50%
+							margin: 0
+							padding: 0
+							font-size: 0.7em 
+							color: rgba(#fff, 0.9) 
+							+transform(translate(-50%, -50%))
+							font-weight: 300 
+							letter-spacing: 1px 
+					i
+						position: absolute
+						color: rgba(#fff, 0.8) 
+						font-size: 1.5em 
+						cursor: pointer
+						top: 50%
+						left: 50%
+						transform: translate(-50%, -50%)
+						&:hover
+							color: rgba(#fff, 0.9) 
+						&:active
+							color: rgba(#fff, 0.98) 
 						
 aside
 	margin-top: 20px
