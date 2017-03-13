@@ -277,29 +277,39 @@ main
 							top: 50%
 							left: 40px
 							width: 60px
-							height: 3px
-							background-color: rgba(#fff, 0.3) 
 							+transform(translateY(-50%))
 							+transition(100ms all ease-in-out)
 							opacity: 0
-							.volume-progress-current
-								position: absolute
-								top: 0%
-								left: 0px
-								height: 100%
-								background-color: #fff
-								.handle
-									position: absolute
-									right: -5px
-									top: 50%
-									+size(10px)
+							input
+								width: 100%
+								float: left
+							input[type=range]
+								-webkit-appearance: none
+								margin: 18px 0
+								width: 100%
+								&:focus
+									outline: none
+								&::-webkit-slider-runnable-track
+									width: 100%
+									height: 3px
 									cursor: pointer
-									border-radius: 100% 
-									background-color: #FFF 
-									box-shadow: 0 1px 3px 0px rgba(#000, 0.3)  
-									z-index: 10 
-									transform: translateY(-50%)
-									+transition(200ms all ease-in-out)
+									animate: 0.2s
+									background: red
+								&::-webkit-slider-thumb
+									height: 12px
+									width: 12px
+									border-radius: 100%
+									background: #ffffff
+									cursor: pointer
+									margin-top: -5px
+									-webkit-appearance: none
+								&::-webkit-slider-runnable-track
+									background: #fff
+								&:focus
+									&::-ms-fill-lower
+										background: #3071a9
+									&::-ms-fill-upper
+										background: #367ebd
 
 					&.video-fullscreen
 						float: right

@@ -60,10 +60,7 @@
 						<li class="video-volume">
 							<i class="ion ion-volume-high"></i>
 							<div class="volume-progress">
-								<div class="volume-progress-current" style="width: 50%">
-									<div class="handle">
-									</div>
-								</div>
+								<input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
 							</div>
 						</li>
 						<li class="video-time">
@@ -72,7 +69,6 @@
 						<li class="video-fullscreen">
 							<i class="ion ion-android-expand"></i>
 						</li>
-						<li><input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input></li>
 					</ul>
 				</div>
 			</div>
