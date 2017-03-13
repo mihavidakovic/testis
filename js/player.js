@@ -41,9 +41,22 @@ function playPauseVideo() {
 	setTimeout(statusCircleUpdate, 400);
 }
 
+//OBVEZNO POPRAVI
+var stevec = 0;
 
+
+function exitFS() {
+		if(document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if(document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if(document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  }
+}
 
 function fullScreenExpand() {
+	if(stevec == 0) {
 	if (video.requestFullscreen) {
   		video.requestFullscreen();
 	} else if (video.mozRequestFullScreen) {
@@ -51,6 +64,11 @@ function fullScreenExpand() {
 	} else if (video.webkitRequestFullscreen) {
   		video.webkitRequestFullscreen();
 	}
+	stevec++;
+} else {
+	stevec = 0;
+	exitFS();
+}
 }
 
 function handleProgressBar() {
@@ -79,7 +97,7 @@ function trenutniKoncniCas() {
 
 	if (video.currentTime == video.duration) {
 		video.pause();
-		tipkaPP.className = "ion-android-refresh";
+		tipkaPP.className = "ion-ios-refresh";
 	}
 }
 
