@@ -12,9 +12,11 @@ const statusCirclePrikaz = statusCircle.querySelector('.ion-ios-play');
 const cas = player.querySelector('.video-time');
 const casPrikaz = cas.querySelector('.time');
 
+const progress = player.querySelector('.progress');
+
 //status krog na sredini
 var showStatusCircle = false;
-
+//funckcija, ki spreminja vrednost spremenljivke showStatusCircle
 function statusCircleUpdate() {
 	if (showStatusCircle == true) {
 		showStatusCircle = false;
@@ -24,6 +26,7 @@ function statusCircleUpdate() {
 
 
 //funkcije playerja
+//play/pause
 function playPauseVideo() {
 	if (video.paused == true) {
 		tipkaPP.className = "ion-ios-pause";
@@ -38,55 +41,63 @@ function playPauseVideo() {
 		statusCirclePrikaz.className = "ion-ios-pause";
 		video.pause();
 	}
+	//funkcija statusCircleUpdate naj se sproži po x ms
 	setTimeout(statusCircleUpdate, 400);
 }
+
 
 //OBVEZNO POPRAVI
 var stevec = 0;
 
-
+//funkcija za izhod iz fullscreena
 function exitFS() {
-		if(document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if(document.mozCancelFullScreen) {
-    document.mozCancelFullScreen();
-  } else if(document.webkitExitFullscreen) {
-    document.webkitExitFullscreen();
-  }
+	if(document.exitFullscreen) {
+    	document.exitFullscreen();
+  	} else if(document.mozCancelFullScreen) {
+    	document.mozCancelFullScreen();
+  	} else if(document.webkitExitFullscreen) {
+    	document.webkitExitFullscreen();
+  	}
 }
 
+//funkcija za vstop v fullscreen
 function fullScreenExpand() {
 	if(stevec == 0) {
-	if (video.requestFullscreen) {
-  		video.requestFullscreen();
-	} else if (video.mozRequestFullScreen) {
-  		video.mozRequestFullScreen();
-	} else if (video.webkitRequestFullscreen) {
-  		video.webkitRequestFullscreen();
+		if (video.requestFullscreen) {
+  			video.requestFullscreen();
+		} else if (video.mozRequestFullScreen) {
+  			video.mozRequestFullScreen();
+		} else if (video.webkitRequestFullscreen) {
+  			video.webkitRequestFullscreen();
+		}
+		stevec++;
+	} else {
+		stevec = 0;
+		exitFS();
 	}
-	stevec++;
-} else {
-	stevec = 0;
-	exitFS();
-}
 }
 
+//določa širino progressbara
 function handleProgressBar() {
 	const procent = (video.currentTime / video.duration) * 100;
 	progressBar.style = "width: " + procent + "%";
 }
 
+//čas
 function trenutniKoncniCas() {
 	var sekundeT = parseInt(video.currentTime % 60);
 	var minuteT = parseInt((video.currentTime / 60) % 60);
+	//po kmečko popravljamo format
 	if (sekundeT < 10) {
 		sekundeT = "0" + sekundeT;
 	}
 	if (minuteT < 10) {
 		minuteT = "0" + minuteT;
 	}
+	
 	var sekundeK = parseInt(video.duration % 60);
 	var minuteK = parseInt((video.duration / 60) % 60);
+	//po kmečko popravljamo format
 	if (sekundeK < 10) {
 		sekundeK = "0" + sekundeK;
 	}
@@ -94,11 +105,16 @@ function trenutniKoncniCas() {
 		minuteK = "0" + minuteK;
 	}
 	casPrikaz.innerHTML = minuteT + ":" + sekundeT + " / " + minuteK + ":" + sekundeK;
-
+	//če je videa konc, zamenjamo ikonco
 	if (video.currentTime == video.duration) {
 		video.pause();
 		tipkaPP.className = "ion-ios-refresh";
 	}
+}
+
+function scrub(e) {
+  const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+  video.currentTime = scrubTime;
 }
 
 //event listenerji za player
@@ -108,3 +124,9 @@ statusCircle.addEventListener('click', playPauseVideo);
 fullScreen.addEventListener('click', fullScreenExpand);
 video.addEventListener('timeupdate', handleProgressBar);
 video.addEventListener('timeupdate', trenutniKoncniCas);
+
+let mousedown = false;
+progress.addEventListener('click', scrub);
+progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
+progress.addEventListener('mousedown', () => mousedown = true);
+progress.addEventListener('mouseup', () => mousedown = false);
