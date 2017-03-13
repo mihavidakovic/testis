@@ -14,6 +14,9 @@ const casPrikaz = cas.querySelector('.time');
 
 const progress = player.querySelector('.progress');
 
+const volume = player.querySelector('.volume-progress');
+const volumeBar = player.querySelector('.volume-progress-current');
+
 //status krog na sredini
 var showStatusCircle = false;
 //funckcija, ki spreminja vrednost spremenljivke showStatusCircle
@@ -24,6 +27,7 @@ function statusCircleUpdate() {
 	}
 }
 
+video.volume = 1;
 
 //funkcije playerja
 //play/pause
@@ -120,6 +124,25 @@ function scrub(e) {
   video.currentTime = scrubTime;
 }
 
+function handleVolumeBar() {
+	const procentVolume = video.volume * 100;
+	progressBar.style = "width: " + procentVolume + "%";
+}
+
+// function handleVolume(e) {
+	
+// }
+
+window.SetVolume = function(val)
+{
+    console.log('Before: ' + video.volume);
+    video.volume = val / 100;
+    console.log('After: ' + video.volume);
+}
+	// const procentVolume = video.volume * 100;
+	// volumeBar.style = "width: " + procentVolume + "%";
+
+
 //event listenerji za player
 video.addEventListener('click', playPauseVideo);
 video.addEventListener('dblclick', fullScreenExpand);
@@ -135,3 +158,5 @@ progress.addEventListener('click', scrub);
 progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
 progress.addEventListener('mousedown', () => mousedown = true);
 progress.addEventListener('mouseup', () => mousedown = false);
+
+//var volumeLevel = e.offsetX / volume.offsetWidth;

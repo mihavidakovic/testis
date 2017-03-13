@@ -39,7 +39,7 @@
 	<div class="container">
 		<main>
 			<div class="video">
-				<video class="viewer" src="video/video1.mp4">
+				<video class="viewer" src="video/video2.mp4">
 				</video>
 				<div class="state play">
 					<i class="ion ion-ios-play"></i>
@@ -72,6 +72,7 @@
 						<li class="video-fullscreen">
 							<i class="ion ion-android-expand"></i>
 						</li>
+						<li><input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input></li>
 					</ul>
 				</div>
 			</div>
