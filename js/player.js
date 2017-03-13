@@ -76,6 +76,9 @@ function fullScreenExpand() {
 		exitFS();
 	}
 }
+function test() {
+	console.log('drek');
+}
 
 //določa širino progressbara
 function handleProgressBar() {
@@ -119,6 +122,8 @@ function scrub(e) {
 
 //event listenerji za player
 video.addEventListener('click', playPauseVideo);
+video.addEventListener('dblclick', fullScreenExpand);
+statusCircle.addEventListener('dblclick', fullScreenExpand);
 playPause.addEventListener('click', playPauseVideo);
 statusCircle.addEventListener('click', playPauseVideo);
 fullScreen.addEventListener('click', fullScreenExpand);
