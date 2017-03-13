@@ -61,9 +61,20 @@ function handleProgressBar() {
 function trenutniKoncniCas() {
 	var sekundeT = parseInt(video.currentTime % 60);
 	var minuteT = parseInt((video.currentTime / 60) % 60);
-
+	if (sekundeT < 10) {
+		sekundeT = "0" + sekundeT;
+	}
+	if (minuteT < 10) {
+		minuteT = "0" + minuteT;
+	}
 	var sekundeK = parseInt(video.duration % 60);
 	var minuteK = parseInt((video.duration / 60) % 60);
+	if (sekundeK < 10) {
+		sekundeK = "0" + sekundeK;
+	}
+	if (minuteK < 10) {
+		minuteK = "0" + minuteK;
+	}
 	casPrikaz.innerHTML = minuteT + ":" + sekundeT + " / " + minuteK + ":" + sekundeK;
 
 	if (video.currentTime == video.duration) {
