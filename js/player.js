@@ -79,7 +79,7 @@ function trenutniKoncniCas() {
 
 	if (video.currentTime == video.duration) {
 		video.pause();
-		tipkaPP.className = "ion-ios-refresh";
+		tipkaPP.className = "ion-android-refresh";
 	}
 }
 
