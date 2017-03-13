@@ -197,6 +197,8 @@ main {
       width: 100% !important;
       height: auto !important;
       float: left; }
+    main .video ::-webkit-media-controls {
+      display: none !important; }
     main .video .state {
       position: absolute;
       top: 50%;
@@ -247,7 +249,8 @@ main {
       opacity: 0;
       -webkit-transition: 150ms all cubic-bezier(0.86, 0, 0.07, 1);
       -moz-transition: 150ms all cubic-bezier(0.86, 0, 0.07, 1);
-      transition: 150ms all cubic-bezier(0.86, 0, 0.07, 1); }
+      transition: 150ms all cubic-bezier(0.86, 0, 0.07, 1);
+      z-index: 2147483647; }
       main .video .kontrole:hover .progress {
         height: 5px;
         cursor: pointer; }

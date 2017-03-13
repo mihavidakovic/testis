@@ -164,6 +164,8 @@ main
 			width: 100% !important
 			height: auto !important
 			float: left
+		::-webkit-media-controls
+			display: none !important
 		.state
 			position: absolute
 			top: 50%
@@ -200,6 +202,7 @@ main
 			+linear-gradient(rgba(#000, 0), rgba(#000, 0.85))
 			opacity: 0
 			+transition(150ms all $ease-in-out-quint)
+			z-index: 2147483647
 			&:hover
 				.progress
 					height: 5px
