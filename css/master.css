@@ -126,12 +126,12 @@ main {
       -webkit-transform: translateX(100%);
       -ms-transform: translateX(100%);
       transform: translateX(100%); }
-    main .feature .img {
+    main .feature .col-lg-5 {
       float: left;
       position: relative; }
-      main .feature .img img {
+      main .feature .col-lg-5 img {
         width: 100%;
-        position: absolute;
+        float: left;
         -webkit-transition: 200ms all ease-in-out;
         -moz-transition: 200ms all ease-in-out;
         transition: 200ms all ease-in-out; }
