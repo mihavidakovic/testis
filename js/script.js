@@ -154,35 +154,25 @@ function autoSlide() {
 }
 
 //slide in
-const slikeZaSlide = document.querySelectorAll('.slide-in');
-function slikeSlide(e) {
-	slikeZaSlide.forEach(function(img) {
-	const slideInAt = (window.scrollY + window.innerHeight) - img.height / 2;
-	const imageBottom = img.offsetTop + img.height;
-       const isHalfShown = slideInAt > img.offsetTop;
-       const isNotScrolledPast = window.scrollY < imageBottom;
-       if (isHalfShown && isNotScrolledPast) {
-         img.style.transform = "translateX(-100%)";
-       } else {
-         img.style.transform = "translateX(0%)";
-       }
-});
-}
+const sliderImages = document.querySelectorAll('.slide-in');
+var i = -100;
 //ORIGINALNA FUNKCIJA
-// function slikeSlide(e) {
-// 	slikeZaSlide.forEach(slikaZaSlide => {
-// 		const slideInAt = (window.scrollY + window.innerHeight) - slikaZaSlide.height / 2;
-// 		const imageBottom = slikaZaSlide.offsetTop + slikaZaSlide.height;
-//         const isHalfShown = slideInAt > slikaZaSlide.offsetTop;
-//         const isNotScrolledPast = window.scrollY < imageBottom;
-//         if (isHalfShown && isNotScrolledPast) {
-//           slikaZaSlide.style.transform = "translateX(-100%)";
-//         } else {
-//           slikaZaSlide.style.transform = "translateX(0%)";
-//         }
-
-// 	});
-// }
+function slikeSlide(e) {
+	    sliderImages.forEach(sliderImage => {
+        const slideInAt = ((window.scrollY + window.innerHeight) - sliderImage.height / 2) - 100;
+        // bottom of the image
+        const imageBottom = sliderImage.offsetTop + sliderImage.height;
+        const isHalfShown = slideInAt > sliderImage.offsetTop;
+        const isNotScrolledPast = window.scrollY < imageBottom;
+        if (isHalfShown && isNotScrolledPast) {
+          i++;
+          sliderImage.style.transform = "translateX(0%)";
+        } else {
+          
+          sliderImage.style.transform = "translateX(" + i + "%)";
+        }
+      });
+    }
 
 
 //event listeners
