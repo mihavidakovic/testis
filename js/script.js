@@ -8,6 +8,12 @@ for (var i = 0; i < 5; i++) {
 	picturesArray[i] = document.getElementById(i);
 	}
 
+//če indeks ne obstaja ga nastavimo
+var test = localStorage.getItem("indeks");
+if (test == null) {
+	localStorage.setItem("indeks", 0);
+}
+
 //setting the first picture
 var index = localStorage.getItem("indeks");
 var firstPicture = document.getElementById(localStorage.getItem("indeks"));
@@ -17,8 +23,6 @@ if(class2 == class2) {
 } else {
 	firstPicture.className -= " active";
 }
-
-var test = localStorage.getItem("indeks");
 
 //spremenljivka ki določa status auto slide funkcije
 var activeAutoSlide = true;
@@ -152,19 +156,33 @@ function autoSlide() {
 //slide in
 const slikeZaSlide = document.querySelectorAll('.slide-in');
 function slikeSlide(e) {
-	slikeZaSlide.forEach(slikaZaSlide => {
-		const slideInAt = (window.scrollY + window.innerHeight) - slikaZaSlide.height / 2;
-		const imageBottom = slikaZaSlide.offsetTop + slikaZaSlide.height;
-        const isHalfShown = slideInAt > slikaZaSlide.offsetTop;
-        const isNotScrolledPast = window.scrollY < imageBottom;
-        if (isHalfShown && isNotScrolledPast) {
-          slikaZaSlide.style.transform = "translateX(-100%)";
-        } else {
-          slikaZaSlide.style.transform = "translateX(0%)";
-        }
-
-	});
+	slikeZaSlide.forEach(function(img) {
+	const slideInAt = (window.scrollY + window.innerHeight) - img.height / 2;
+	const imageBottom = img.offsetTop + img.height;
+       const isHalfShown = slideInAt > img.offsetTop;
+       const isNotScrolledPast = window.scrollY < imageBottom;
+       if (isHalfShown && isNotScrolledPast) {
+         img.style.transform = "translateX(-100%)";
+       } else {
+         img.style.transform = "translateX(0%)";
+       }
+});
 }
+//ORIGINALNA FUNKCIJA
+// function slikeSlide(e) {
+// 	slikeZaSlide.forEach(slikaZaSlide => {
+// 		const slideInAt = (window.scrollY + window.innerHeight) - slikaZaSlide.height / 2;
+// 		const imageBottom = slikaZaSlide.offsetTop + slikaZaSlide.height;
+//         const isHalfShown = slideInAt > slikaZaSlide.offsetTop;
+//         const isNotScrolledPast = window.scrollY < imageBottom;
+//         if (isHalfShown && isNotScrolledPast) {
+//           slikaZaSlide.style.transform = "translateX(-100%)";
+//         } else {
+//           slikaZaSlide.style.transform = "translateX(0%)";
+//         }
+
+// 	});
+// }
 
 
 //event listeners
