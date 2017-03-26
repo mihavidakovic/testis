@@ -2,11 +2,16 @@
 <html>
 <head>
 	<title>canvas</title>
-</head>
+	<link rel="stylesheet" type="text/css" href="css/master.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://use.fontawesome.com/96e85c81df.js"></script>
 <body>
-<input type="text" id="zgornji" name="1" placeholder="Tekst zgoraj">
-<input type="text" id="spodnji" name="2" placeholder="Tekst spodaj">
+<input oninput="dodajUrl()" type="text" id="url" name="2" placeholder="Vnesi url slike">
+<input oninput="memePreview()" type="text" id="zgornji" name="1" placeholder="Tekst zgoraj">
+<input oninput="memePreview()" type="text" id="spodnji" name="2" placeholder="Tekst spodaj">
 <canvas id="meme"></canvas>
+<br>
 <button id="predogled">Predogled</button>
 </body>
 <script type="text/javascript" src="js/canvas.js"></script>
