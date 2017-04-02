@@ -52,5 +52,3 @@ function ponastaviMeme() {
 shrani.addEventListener('click', shraniMeme);
 dodajSliko.addEventListener('click', dodajUrl);
 reset.addEventListener('click', ponastaviMeme);
-//
-//"'" + dataURL + "'"
