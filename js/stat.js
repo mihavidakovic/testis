@@ -1,25 +1,24 @@
 function loadJSON(callback) {
-    console.log('Država, ');
     var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'countries.json', true); // Replace 'my_data' with the path to your file
-    xobj.onreadystatechange = function () {
-          if (xobj.readyState == 4 && xobj.status == "2000") {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            callback(xobj.responseText);
-          }
-    };
-    xobj.send(null);  
- }
+xobj.overrideMimeType("application/json");
+xobj.open('GET', 'countries.json', true);
+xobj.onreadystatechange = function () {
+if (xobj.readyState == 4 && xobj.status == "200") {
 
- function init() {
- loadJSON(function(response) {
-  // Parse JSON string into object
-    var actual_JSON = JSON.parse(response);
+// .open will NOT return a value but simply returns undefined in async mode so use a callback
+callback(xobj.responseText);
 
-    console.log('Država, ', actual_JSON[0].name);
- });
+}
+}
+xobj.send(null);
+
 }
 
-window.addEventListener('load', loadJSON);
-window.addEventListener('load', init);
+// Call to function with anonymous callback
+loadJSON(function(response) {
+// Do Something with the response e.g.
+var drek = JSON.parse(response);
+// Assuming json data is wrapped in square brackets as Drew suggests
+console.log("drek ", drek[0].name);
+
+});
