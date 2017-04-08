@@ -5,6 +5,7 @@ const slika = document.getElementById('slika');
 const downvote = document.getElementById('downvote');
 const upvote = document.getElementById('upvote');
 
+//JSON load funkcija (nevem kaj se tukaj dogaja, skopirano z neta)
 function loadJSON(callback) {
     var xobj = new XMLHttpRequest();
 xobj.overrideMimeType("application/json");
@@ -37,18 +38,19 @@ slika.src = zbirka[indeks].url;
 
 });
 
-//Funkcije
+//FUNKCIJE
+
 //funkcija za prestavljanje
 function naprej() {
-	if(indeks >= zbirka.length - 1 || indeks < 0) {
-		indeks = Math.floor(Math.random() * 21);
-		naslov.innerHTML = "";
+	if(indeks >= zbirka.length - 1 || indeks < 0) { //tukaj omejimo delovanje funkcije na velikost jsona v našem primeru 20
+		indeks = Math.floor(Math.random() * 21); //random 0->20
+		naslov.innerHTML = ""; //ponastavimo tekst na prazen string, če ne nam jih sešteva
 		ustvarjeno.innerHTML = "";
-		naslov.innerHTML = naslov.innerHTML + zbirka[indeks].title;
+		naslov.innerHTML = naslov.innerHTML + zbirka[indeks].title; //nastavimo tekst na vrednost polja v json zbirki z trenutnim indeksom
 		ustvarjeno.innerHTML = "Ustvarjeno: " + zbirka[indeks].created_at;
 		slika.src = zbirka[indeks].url;
 	} else {
-		indeks = Math.floor(Math.random() * 21);
+		indeks = Math.floor(Math.random() * 21); //random 0->20
 		naslov.innerHTML = "";
 		ustvarjeno.innerHTML = "";
 		naslov.innerHTML = naslov.innerHTML + zbirka[indeks].title;
@@ -58,6 +60,6 @@ function naprej() {
 
 }
 
-
+//Event listenerji
 upvote.addEventListener('click', naprej);
 downvote.addEventListener('click', naprej);
