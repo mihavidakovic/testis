@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Testis</title>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" type="text/css" href="css/master.css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -33,7 +35,7 @@
 			</div>
 		</nav>
 		<div class="slider">
-			<div class="kontrola nazaj">
+			<div class="kontrola nazaj visible">
 				<i class="fa fa-angle-left"></i>
 			</div>
 			<div class="slika" id="0" style="background-image: url(http://www.bmw.si/content/dam/bmw/common/home/teaser/BMW-5series-sedan-home-teaser-s2-XXL-desktop.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1476370052435.jpg)">
@@ -88,37 +90,73 @@
 			</div>
 		</div>
 	</header>
-	<main>
 	<div class="container">
-		<div class="row">
-			<main class="col-lg-8">
-				<h2>Opis strani</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis dolor consequat, dictum enim ut, imperdiet mi. Cras non tincidunt felis, a volutpat velit. Nullam venenatis condimentum sagittis. Nunc et eros gravida, accumsan nisl sit amet, lobortis nulla. Duis sagittis turpis quis nisi sollicitudin facilisis. Mauris ut ipsum elementum, facilisis nunc in, commodo felis. Nunc accumsan nisl ut imperdiet laoreet. Vivamus tristique aliquam turpis, vel feugiat eros interdum at. Nam tincidunt vitae enim sed egestas. Nulla tincidunt metus mi, eu fringilla orci vestibulum in. Proin sit amet orci volutpat, lobortis velit sit amet, sollicitudin elit. Proin commodo, quam ullamcorper porta aliquet, eros dolor vehicula mi, quis tempor diam nisl non tellus. Donec massa diam, ullamcorper in orci eget, pretium facilisis eros. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed consequat eget diam vitae efficitur.</p>
-
-				<p>Vestibulum ligula arcu, dignissim venenatis nibh ac, maximus iaculis ante. Aliquam erat volutpat. Donec malesuada eleifend dolor, quis commodo erat consectetur quis. Quisque accumsan nibh nibh. Etiam in lectus lorem. Etiam in imperdiet nibh, non rutrum turpis. Duis ac diam lobortis, consequat diam sed, mollis velit. Pellentesque pellentesque sem sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam feugiat ullamcorper velit in congue. Nullam dictum mattis dolor quis volutpat. Nulla imperdiet bibendum tortor. Vivamus eget rutrum justo, id pharetra orci. Fusce venenatis, tellus eget vulputate posuere, orci arcu vestibulum magna, vel elementum ipsum nisl ut augue.</p>
-
-				<p>Vivamus vitae justo tristique, suscipit felis vel, facilisis lectus. Sed nec tincidunt ligula. Duis aliquam tincidunt sodales. Suspendisse lectus tortor, molestie id viverra a, laoreet non lectus. Donec posuere sem eget orci auctor suscipit in sed mi. Pellentesque varius quis ante a aliquet. Praesent eu augue eu tortor elementum rhoncus mollis at leo. Cras vel quam a sapien consectetur aliquet. Sed elementum mi nec ante dignissim tincidunt. Aliquam et eros sem. Nulla lacinia varius sapien quis pulvinar. Proin vitae lobortis urna. Donec vitae ornare nulla, et aliquam velit. Praesent nec facilisis quam.</p>
-
-				<p>Sed facilisis, nisi quis rhoncus pretium, ipsum augue iaculis elit, non malesuada dui diam nec tellus. Donec varius viverra velit ut pellentesque. Pellentesque vel quam eu arcu aliquam bibendum. Duis neque nulla, scelerisque id erat et, rhoncus volutpat purus. Mauris a feugiat felis. Nam eros massa, lacinia non ornare sed, facilisis vitae dolor. Praesent placerat vehicula elit vel ultrices. Maecenas nec iaculis neque, ut rhoncus elit. Etiam vel mauris interdum, consequat ex vel, luctus est. Vestibulum in vestibulum nulla. Vivamus porttitor accumsan cursus.</p>
-
-				<p>Fusce pretium varius diam eu porttitor. Etiam lacinia justo sed erat interdum, quis tempus purus fermentum. Aliquam placerat, arcu eu accumsan pretium, lacus justo lobortis urna, ut vehicula sem tellus ac dui. Donec condimentum scelerisque lorem, ac fringilla nisl pharetra ac. Donec ut dapibus est, id facilisis turpis. Morbi non massa sit amet nulla malesuada condimentum vel sed libero. Vestibulum et iaculis eros. Curabitur non bibendum magna. Suspendisse potenti. Mauris quis dictum ante. Pellentesque auctor ut ipsum ut rhoncus. Curabitur ultrices sem sit amet sagittis condimentum. Cras ac dolor at velit dictum scelerisque. Curabitur accumsan arcu quis fringilla tempor. Cras in sagittis felis.</p>
-			</main>
-			<aside class="col-lg-4">
-				<div class="">
-					<div class="inside">
-						<h4>Stranska vrstica</h4>
-						<ul>
-							<li><a href="#">Prijava</a></li>
-							<li><a href="#">Registracija</a></li>
-						</ul>
-					</div>
+		<main class="row">
+			<section class="feature left">
+				<div class="img col-lg-5">
+					<img class="slide-in" src="http://www.bmw.co.id/content/dam/bmw/common/all-models/m-series/m4-coupe/2014/m4-gts/m4-gts-driving-large-teaser-.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1447949538576.jpg">
 				</div>
-			</aside>
-		</div>
-    </aside>
+				<div class="info col-lg-7">
+					<h3>Test naslov 123</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.</p>
+					<button class="btn btn-primary">Gumb #1</button>
+				</div>
+			</section>
+			<section class="feature right">
+				<div class="info col-lg-7" style="text-align: right;">
+					<h3>Test naslov 123</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.</p>
+					<button class="btn btn-primary">Gumb #1</button>
+				</div>
+				<div class="img col-lg-5">
+					<img class="slide-in" src="http://www.bmw.si/content/dam/bmw/common/cs/Topics/seasonal-offers/Autumn_and_Winter/NEU_1680x756.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1471951852756.jpg">
+				</div>
+			</section>
+			<section class="feature left">
+				<div class="img col-lg-5">
+					<img class="slide-in" src="http://www.bmw.si/content/dam/bmw/common/home/teaser/BMW-5series-sedan-home-teaser-s2-XXL-desktop.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1476370052435.jpg">
+				</div>
+				<div class="info col-lg-7">
+					<h3>Test naslov 123</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.</p>
+					<button class="btn btn-primary">Gumb #1</button>
+				</div>
+			</section>
+		</main>
 	</div>
-	</main>
-
+	<div class="supporters">
+		<div class="container">
+			<ul>
+				<li>
+					<img src="img/bmw-logo.png">
+				</li>
+				<li>
+					<img src="img/audi-logo.png">
+				</li>
+				<li>
+					<img src="img/youtube-logo.png">
+				</li>
+				<li>
+					<img src="img/ibm-logo.png">
+				</li>
+				<li>
+					<img src="img/24ur-logo.png">
+				</li>
+				<li>
+					<img src="img/cnn-logo.png">
+				</li>
+			</ul>
+		</div>
+	</div>
 	<footer>
 		<div class="container">
 			<div class="row">

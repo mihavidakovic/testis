@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Testis</title>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" type="text/css" href="css/master.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<script src="https://use.fontawesome.com/96e85c81df.js"></script>
+	</head>
+	<body class="podstran">
+
+	<header>
+		<nav class="navbar navbar-toggleable-md navbar-inverse fixed bg">
+			<div class="container">
+			  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <a class="navbar-brand" href="#">JuskeTrans</a>
+
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+				  <li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link disabled" href="#">Disabled</a>
+				  </li>
+				</ul>
+				  </div>
+			</div>
+		</nav>
+	</header>
+	<div class="container">
+		<main>
+			<div class="video">
+				<video class="viewer" src="video/video2.mp4">
+				</video>
+				<div class="state play">
+					<i class="ion ion-ios-play"></i>
+				</div>
+				<div class="kontrole">
+					<div class="progress">
+						<div class="progress-loaded" style="width: 60%;">
+						</div>
+						<div class="progress-current">
+							<div class="handle">
+							</div>
+						</div>
+				</div>
+					<ul>
+						<li class="video-play">
+							<i class="ion ion-ios-play"></i>
+						</li>
+						<li class="video-volume">
+							<i class="ion ion-volume-high"></i>
+							<div class="volume-progress">
+								<input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
+							</div>
+						</li>
+						<li class="video-time">
+							<p class="time">00:00 / 00:00</p>
+						</li>
+						<li class="video-fullscreen">
+							<i class="ion ion-android-expand"></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</main>
+	</div>
+	<div class="supporters">
+		<div class="container">
+			<ul>
+				<li>
+					<img src="img/bmw-logo.png">
+				</li>
+				<li>
+					<img src="img/audi-logo.png">
+				</li>
+				<li>
+					<img src="img/youtube-logo.png">
+				</li>
+				<li>
+					<img src="img/ibm-logo.png">
+				</li>
+				<li>
+					<img src="img/24ur-logo.png">
+				</li>
+				<li>
+					<img src="img/cnn-logo.png">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					<h5>Test #1</h5>
+					<ul>
+						<li><a href="#">Domov</a></li>
+						<li><a href="#">Cenik</a></li>
+						<li><a href="#">Kontakt</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-7">
+				</div>
+				<div class="col-lg-2 float-right">
+					<h5 class="mini-logo">JuskeTrans</h5>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="container">
+				<p>Vse pravice pridržane &copy; JuskeTrans 2017</p>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/player.js"></script>
+	</body>
+</html>

@@ -1,3 +1,4 @@
+@import 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
 body {
   background-color: #24292e;
   margin: 0;
@@ -6,9 +7,56 @@ body {
   body * {
     margin: 0;
     padding: 0; }
+  body.podstran main {
+    margin-top: 70px; }
 
 .float-right {
   float: right; }
+
+@-webkit-keyframes state {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0; }
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0; } }
+
+@-moz-keyframes state {
+  0% {
+    -moz-transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0; }
+  50% {
+    -moz-transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1; }
+  100% {
+    -moz-transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0; } }
+
+@keyframes state {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0.6);
+    -moz-transform: translate(-50%, -50%) scale(0.6);
+    -ms-transform: translate(-50%, -50%) scale(0.6);
+    -o-transform: translate(-50%, -50%) scale(0.6);
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0; }
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+    -moz-transform: translate(-50%, -50%) scale(1.2);
+    -ms-transform: translate(-50%, -50%) scale(1.2);
+    -o-transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+    -moz-transform: translate(-50%, -50%) scale(1.2);
+    -ms-transform: translate(-50%, -50%) scale(1.2);
+    -o-transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0; } }
 
 header {
   width: 100%;
@@ -122,6 +170,256 @@ main {
   width: 100%;
   float: left;
   margin-top: 20px; }
+  main .feature {
+    padding: 150px 0; }
+    main .feature.left .img img {
+      -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+      transform: translateX(-100%); }
+    main .feature.right .img img {
+      -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+      transform: translateX(100%); }
+    main .feature .img {
+      float: left;
+      position: relative; }
+      main .feature .img img {
+        width: 100%;
+        position: absolute;
+        -webkit-transition: 200ms all ease-in-out;
+        -moz-transition: 200ms all ease-in-out;
+        transition: 200ms all ease-in-out; }
+    main .feature .info {
+      float: left; }
+  main .video {
+    width: 100%;
+    float: left;
+    position: relative;
+    overflow: hidden; }
+    main .video:hover .kontrole {
+      opacity: 1;
+      bottom: 0; }
+    main .video video {
+      width: 100% !important;
+      height: auto !important;
+      float: left; }
+    main .video ::-webkit-media-controls {
+      display: none !important; }
+    main .video .state {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 150px;
+      height: 150px;
+      background-color: rgba(17, 17, 17, 0.85);
+      -webkit-border-radius: 100%;
+      border-radius: 100%;
+      opacity: 0; }
+      main .video .state.visible {
+        -webkit-animation: state 450ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        -moz-animation: state 450ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        animation: state 450ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        -webkit-animation-iteration-count: 1;
+        -moz-animation-iteration-count: 1;
+        animation-iteration-count: 1; }
+      main .video .state .ion-ios-play {
+        left: 52%; }
+      main .video .state i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 5em;
+        color: #FFF; }
+    main .video .kontrole {
+      position: absolute;
+      padding: 0 10px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      padding-top: 10px;
+      background-color: transparent !important;
+      background-color: transparent;
+      background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+      background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+      opacity: 0;
+      -webkit-transition: 150ms all cubic-bezier(0.86, 0, 0.07, 1);
+      -moz-transition: 150ms all cubic-bezier(0.86, 0, 0.07, 1);
+      transition: 150ms all cubic-bezier(0.86, 0, 0.07, 1);
+      z-index: 2147483647; }
+      main .video .kontrole:hover .progress {
+        height: 5px;
+        cursor: pointer; }
+        main .video .kontrole:hover .progress .progress-current .handle {
+          -webkit-transform: translateY(-50%) scale(1);
+          -ms-transform: translateY(-50%) scale(1);
+          transform: translateY(-50%) scale(1); }
+      main .video .kontrole .progress {
+        width: calc(100% - 20px);
+        left: 10px;
+        height: 3px;
+        background-color: rgba(255, 255, 255, 0.3);
+        position: absolute;
+        top: 30%;
+        overflow: visible;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: 100ms all ease-in-out;
+        -moz-transition: 100ms all ease-in-out;
+        transition: 100ms all ease-in-out; }
+        main .video .kontrole .progress .progress-loaded {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          background-color: rgba(255, 255, 255, 0.4); }
+        main .video .kontrole .progress .progress-current {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          background-color: #E74C3C;
+          -webkit-transition: 10ms all ease-in-out;
+          -moz-transition: 10ms all ease-in-out;
+          transition: 10ms all ease-in-out; }
+          main .video .kontrole .progress .progress-current .handle {
+            position: absolute;
+            right: -5px;
+            top: 50%;
+            height: 11px;
+            width: 11px;
+            cursor: pointer;
+            border-radius: 100%;
+            background-color: #FFF;
+            box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            -webkit-transform: translateY(-50%) scale(0);
+            -ms-transform: translateY(-50%) scale(0);
+            transform: translateY(-50%) scale(0);
+            -webkit-transition: 200ms all ease-in-out;
+            -moz-transition: 200ms all ease-in-out;
+            transition: 200ms all ease-in-out; }
+      main .video .kontrole ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0 0;
+        float: left;
+        width: 100%;
+        height: 70%;
+        position: relative; }
+        main .video .kontrole ul li {
+          float: left;
+          width: 40px;
+          position: relative;
+          text-align: center;
+          height: 100%;
+          cursor: pointer;
+          margin-right: 0px; }
+          main .video .kontrole ul li.video-volume {
+            overflow: hidden;
+            -webkit-transition: 200ms all ease-in-out;
+            -moz-transition: 200ms all ease-in-out;
+            transition: 200ms all ease-in-out; }
+            main .video .kontrole ul li.video-volume:hover {
+              width: 110px; }
+              main .video .kontrole ul li.video-volume:hover .volume-progress {
+                opacity: 1; }
+            main .video .kontrole ul li.video-volume i {
+              left: 5px;
+              -webkit-transform: translate(0%, -50%);
+              -moz-transform: translate(0%, -50%);
+              -ms-transform: translate(0%, -50%);
+              -o-transform: translate(0%, -50%);
+              transform: translate(0%, -50%); }
+            main .video .kontrole ul li.video-volume .volume-progress {
+              position: absolute;
+              top: 50%;
+              left: 40px;
+              width: 60px;
+              -webkit-transform: translateY(-50%);
+              -moz-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+              -o-transform: translateY(-50%);
+              transform: translateY(-50%);
+              -webkit-transition: 100ms all ease-in-out;
+              -moz-transition: 100ms all ease-in-out;
+              transition: 100ms all ease-in-out;
+              opacity: 0; }
+              main .video .kontrole ul li.video-volume .volume-progress input {
+                width: 100%;
+                float: left; }
+              main .video .kontrole ul li.video-volume .volume-progress input[type=range] {
+                -webkit-appearance: none;
+                margin: 18px 0;
+                width: 100%; }
+                main .video .kontrole ul li.video-volume .volume-progress input[type=range]:focus {
+                  outline: none; }
+                main .video .kontrole ul li.video-volume .volume-progress input[type=range]::-webkit-slider-runnable-track {
+                  width: 100%;
+                  height: 3px;
+                  cursor: pointer;
+                  animate: 0.2s;
+                  background: red; }
+                main .video .kontrole ul li.video-volume .volume-progress input[type=range]::-webkit-slider-thumb {
+                  height: 12px;
+                  width: 12px;
+                  border-radius: 100%;
+                  background: #ffffff;
+                  cursor: pointer;
+                  margin-top: -5px;
+                  -webkit-appearance: none; }
+                main .video .kontrole ul li.video-volume .volume-progress input[type=range]::-webkit-slider-runnable-track {
+                  background: #fff; }
+                main .video .kontrole ul li.video-volume .volume-progress input[type=range]:focus::-ms-fill-lower {
+                  background: #3071a9; }
+                main .video .kontrole ul li.video-volume .volume-progress input[type=range]:focus::-ms-fill-upper {
+                  background: #367ebd; }
+          main .video .kontrole ul li.video-fullscreen {
+            float: right; }
+          main .video .kontrole ul li.video-time {
+            width: 90px;
+            position: relative; }
+            main .video .kontrole ul li.video-time p {
+              position: absolute;
+              width: 100%;
+              top: 50%;
+              left: 50%;
+              margin: 0;
+              padding: 0;
+              font-size: 0.7em;
+              color: rgba(255, 255, 255, 0.9);
+              -webkit-transform: translate(-50%, -50%);
+              -moz-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+              -o-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+              font-weight: 300;
+              letter-spacing: 1px; }
+          main .video .kontrole ul li i {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.5em;
+            cursor: pointer;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+            main .video .kontrole ul li i:hover {
+              color: rgba(255, 255, 255, 0.9); }
+            main .video .kontrole ul li i:active {
+              color: rgba(255, 255, 255, 0.98); }
 
 aside {
   margin-top: 20px;
@@ -135,6 +433,87 @@ aside {
     padding: 20px; }
     aside .inside ul {
       list-style: none; }
+
+.supporters {
+  width: 100%;
+  float: left;
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 140px;
+  margin-top: 100px; }
+  .supporters ul {
+    width: 100%;
+    float: left;
+    -webkit-box-align: stretch;
+    -moz-box-align: stretch;
+    box-align: stretch;
+    -webkit-align-items: stretch;
+    -moz-align-items: stretch;
+    -ms-align-items: stretch;
+    -o-align-items: stretch;
+    align-items: stretch;
+    -ms-flex-align: stretch;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    box-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    -o-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-flex-pack: start;
+    list-style: none;
+    padding: 0px 0;
+    height: 140px; }
+    .supporters ul li {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      box-flex: 1;
+      -webkit-flex: 1;
+      -moz-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      position: relative;
+      height: 140px;
+      opacity: 0.4; }
+      .supporters ul li:hover {
+        opacity: 1;
+        cursor: pointer; }
+      .supporters ul li:nth-child(1) img {
+        width: 40%; }
+      .supporters ul li:nth-child(2) img {
+        width: 50%; }
+      .supporters ul li:nth-child(3) img {
+        width: 70%; }
+      .supporters ul li:nth-child(4) img {
+        width: 60%; }
+      .supporters ul li:nth-child(5) img {
+        width: 50%; }
+      .supporters ul li:nth-child(6) img {
+        width: 50%; }
+      .supporters ul li img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); }
 
 footer {
   width: 100%;
