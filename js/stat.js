@@ -51,6 +51,7 @@ var indeks = Math.floor(Math.random() * 21);
 
 // Call to function with anonymous callback
 loadJSON(function(response) {
+	console.log(response);
 //Deklaracija json responsa v spremenljivko, ki deluje kot zbirka (globalno dostopna)
 zbirka = JSON.parse(response);
 
